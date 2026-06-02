@@ -177,24 +177,6 @@ body.has-cursor a, body.has-cursor button, body.has-cursor .work-row{ cursor:non
 }
 @media (max-width:860px){ .hero-spotlight{ display:none; } }
 .hero .eyebrow{ display:block; margin-bottom:clamp(22px,3vh,34px); }
-.hero .wrap{
-  padding-right:clamp(var(--pad), calc(min(40vw,440px) + 60px), 550px);
-}
-@media (max-width:1200px){
-  .hero .wrap{
-    padding-right:clamp(var(--pad), calc(min(35vw,360px) + 50px), 420px);
-  }
-}
-@media (max-width:1024px){
-  .hero .wrap{
-    padding-right:clamp(var(--pad), calc(min(30vw,300px) + 40px), 360px);
-  }
-}
-@media (max-width:900px){
-  .hero .wrap{
-    padding-right:var(--pad);
-  }
-}
 .h-display{
   font-family:var(--display); font-weight:700; letter-spacing:-0.03em; line-height:0.98;
   font-size:clamp(40px, 6.6vw, 96px); margin:0; max-width:16ch;
