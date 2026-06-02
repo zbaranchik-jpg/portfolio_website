@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Zhenya Baranchik — Product Designer</title>
+<meta name="description" content="Zhenya Baranchik — Product Designer in Tel Aviv. Simplifying complex B2B2C SaaS platforms and crafting intuitive mobile apps." />
+<link rel="stylesheet" href="site.css" />
+</head>
+<body>
+
+<!-- ░░ HEADER ░░ -->
+<header class="site-head">
+  <div class="bar">
+    <div class="brand"><a href="index.html">Zhenya Baranchik<span class="dot">.</span></a></div>
+    <nav class="nav">
+      <a href="#work">Work</a>
+      <a href="#contact">About</a>
+    </nav>
+  </div>
+</header>
+
+<!-- ░░ HERO ░░ -->
+<section class="hero">
+  <div class="hero-spotlight" id="heroSpot" aria-hidden="true">
+    <div class="hero-reveal-base"></div>
+    <div class="hero-reveal-top" style="opacity: 1; width: 441px"></div>
+    <span class="hero-spot-hint">hover</span>
+  </div>
+  <div class="wrap" style="border-width: 0px; border-style: solid">
+    <span class="eyebrow reveal">PRODUCT DESIGNER — TEL AVIV</span>
+    <h1 class="h-display" data-text="Hi, I&rsquo;m {Zhenya}"></h1>
+    <p class="lead reveal reveal-d2">I’m a Product Designer with 6+ years of experience simplifying complex B2B2C SaaS platforms and crafting intuitive mobile apps.<br/>
+I genuinely love what I do — especially getting inside users’ heads, figuring out how they behave, and solving tricky UX problems with simple UI.</p>
+    <div class="hero-meta reveal reveal-d3">
+    </div>
+    <a href="#work" class="scroll-cue reveal reveal-d4" aria-label="Scroll down"><span class="line"></span></a>
+  </div>
+</section>
+
+<!-- ░░ WORK ░░ -->
+<section class="work" id="work" style="margin: 0px 0px 115px">
+  <div class="wrap">
+    <div class="sec-head reveal" style="border-width: 0px">
+      <span class="label">Selected work</span>
+      <span class="count">(03)</span>
+    </div>
+    <div class="work-list">
+
+      <div class="work-row reveal" data-href="case-nowyouknow.html" data-preview="nyk-hero" data-cursor="view" data-cursor-label="Open">
+        <span class="wr-num">01</span>
+        <span class="wr-titlewrap">
+          <span class="wr-co">NowYouKnow</span>
+          <span class="wr-titlerow" style="text-align: left">
+            <a href="case-nowyouknow.html" class="wr-title">NowYouKnow</a>
+            <span class="tag">Consumer app</span>
+            <span class="tag">Mobile</span>
+          </span>
+        </span>
+        <span class="wr-desc">A journey-based skill-learning app, redesigned V2 → V3 — strategy, brand, design system, and core product in under a year.</span>
+        <span class="wr-arrow">↗</span>
+      </div>
+
+      <div class="work-row reveal" data-href="case-automation.html" data-preview="auto-hero" data-cursor="view" data-cursor-label="Open">
+        <span class="wr-num">02</span>
+        <span class="wr-titlewrap">
+          <span class="wr-co">Workiz</span>
+          <span class="wr-titlerow">
+            <a href="case-automation.html" class="wr-title">Automation Revamp</a>
+            <span class="tag">B2B SaaS</span>
+          </span>
+        </span>
+        <span class="wr-desc">Rebuilding Workiz&rsquo;s automation system to be more intuitive, flexible, and powerful — without disrupting existing habits.</span>
+        <span class="wr-arrow">↗</span>
+      </div>
+
+      <div class="work-row reveal" data-href="case-equipment.html" data-preview="equip-hero" data-cursor="view" data-cursor-label="Open">
+        <span class="wr-num">03</span>
+        <span class="wr-titlewrap">
+          <span class="wr-co">Workiz</span>
+          <span class="wr-titlerow">
+            <a href="case-equipment.html" class="wr-title">Equipment Tracking</a>
+            <span class="tag">B2B SaaS</span>
+          </span>
+        </span>
+        <span class="wr-desc">A way for field-service businesses to monitor and manage all equipment installed for their clients — serials, warranties, service history.</span>
+        <span class="wr-arrow">↗</span>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ░░ FOOTER / CONTACT ░░ -->
+<footer class="site-foot" id="contact">
+  <div class="wrap">
+    <p class="foot-cta reveal">Let&rsquo;s <span class="serif-i talk-gradient" style="font-weight: 700">talk</span>.<br/><a href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=zbaranchik@gmail.com" target="_blank" rel="noopener" data-magnetic="0.18">zbaranchik@gmail.com</a></p>
+    <div class="foot-grid">
+      <div class="foot-col"><span>Zhenya Baranchik (Tel Aviv)</span></div>
+      <div class="foot-col"><a href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=zbaranchik@gmail.com" target="_blank" rel="noopener">zbaranchik@gmail.com</a></div>
+      <div class="foot-col"><a href="tel:+972527330292">052 733 0292</a></div>
+      <div class="foot-col"><a href="https://www.linkedin.com/in/zhenya-baranchik-ba61b7147/" target="_blank" rel="noopener">View profile ↗</a></div>
+    </div>
+  </div>
+</footer>
+
+<!-- floating cursor preview (mirrors each project's case-study hero by id) -->
+<div class="cursor-preview"><image-slot id="nyk-hero" shape="rounded" radius="12"></image-slot></div>
+
+<script src="image-slot.js"></script>
+<script src="site.js"></script>
+<script>
+  // hero hover-reveal spotlight — soft-edged circle follows the cursor
+  (function(){
+    var spot = document.getElementById('heroSpot');
+    if(!spot) return;
+    spot.addEventListener('pointermove', function(e){
+      var r = spot.getBoundingClientRect();
+      spot.style.setProperty('--mx', (e.clientX - r.left) + 'px');
+      spot.style.setProperty('--my', (e.clientY - r.top) + 'px');
+    });
+  })();
+  // "Zhenya" — blue colour follows the cursor in a small circle
+  (function(){
+    var z = document.querySelector('.h-display .serif-i.accent');
+    if(!z) return;
+    z.addEventListener('pointermove', function(e){
+      var r = z.getBoundingClientRect();
+      z.style.setProperty('--zx', (e.clientX - r.left) + 'px');
+      z.style.setProperty('--zy', (e.clientY - r.top) + 'px');
+    });
+    z.addEventListener('pointerleave', function(){
+      z.style.setProperty('--zx', '-300px');
+      z.style.setProperty('--zy', '-300px');
+    });
+  })();
+</script>
+
+<template id="__bundler_thumbnail" data-bg-color="#FFFFFF">
+  <svg viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
+    <rect width="1200" height="800" fill="#FFFFFF"/>
+    <text x="120" y="380" font-family="'Space Grotesk', Helvetica, Arial, sans-serif" font-size="120" font-weight="700" fill="#1B1714" letter-spacing="-5">Hi, I&#8217;m</text>
+    <text x="120" y="510" font-family="'Space Grotesk', Helvetica, Arial, sans-serif" font-size="120" font-weight="700" fill="#EA3A12" letter-spacing="-5">Zhenya</text>
+  </svg>
+</template>
+</body>
+</html>
+
+<style id="__om-edit-overrides">
+:is(h1,h2,h3,h4,h5,h6) >:is(h1,h2,h3,h4,h5,h6,p,li,dt,dd,blockquote,figcaption,label,span,a,em,strong,small,td,th,caption) >.accent { font-weight: 600 !important }
+</style>
