@@ -157,6 +157,24 @@ body.has-cursor a, body.has-cursor button, body.has-cursor .work-row{ cursor:non
   color:var(--ink-faint); pointer-events:none; transition:opacity .35s; opacity:.7; z-index:3;
 }
 .hero-spotlight:hover .hero-spot-hint{ opacity:0; }
+@media (max-width:1200px){
+  .hero-spotlight{
+    width:min(35vw,360px);
+    right:clamp(20px,6vw,100px);
+  }
+}
+@media (max-width:1024px){
+  .hero-spotlight{
+    width:min(30vw,300px);
+    right:clamp(16px,5vw,80px);
+  }
+}
+@media (max-width:900px){
+  .hero-spotlight{
+    width:min(26vw,240px);
+    right:clamp(12px,4vw,60px);
+  }
+}
 @media (max-width:860px){ .hero-spotlight{ display:none; } }
 .hero .eyebrow{ display:block; margin-bottom:clamp(22px,3vh,34px); }
 .h-display{
