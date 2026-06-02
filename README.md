@@ -81,11 +81,24 @@ Or use the VS Code Live Server extension.
 
 ## Deploying on Vercel
 
+This repo includes Vercel configuration for static deployment.
+
 1. Import this repo in Vercel
 2. **Framework preset:** Other
 3. **Build command:** *(leave empty)*
 4. **Output directory:** `.`
 5. Deploy — every push to `main` auto-deploys
+
+### GitHub Actions deploy
+
+A GitHub Actions workflow is included to deploy to Vercel on every push to `main`.
+
+To enable it, add these repository secrets in GitHub:
+- `VERCEL_TOKEN`
+- `VERCEL_ORG_ID`
+- `VERCEL_PROJECT_ID`
+
+Once secrets are configured, pushes to `main` will trigger the Vercel deploy workflow.
 
 ---
 
