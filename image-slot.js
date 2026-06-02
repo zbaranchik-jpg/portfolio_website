@@ -263,6 +263,8 @@
       this._depth = 0;
       this._gen = 0;
       this._view = { s: 1, x: 0, y: 0 };
+      this._originalHeight = this.style.height || '';
+      this._originalAspectRatio = this.style.aspectRatio || '';
       this._subFn = () => this._render();
       // Shadow-DOM listeners live with the shadow DOM — bound once here so
       // disconnect/reconnect (e.g. React remount) doesn't stack handlers.
@@ -284,7 +286,10 @@
       });
       // naturalWidth/Height aren't known until load — re-apply so the cover
       // baseline is computed from real dimensions, not the 100%×100% fallback.
-      this._img.addEventListener('load', () => this._applyView());
+      this._img.addEventListener('load', () => {
+        this._applyView();
+        this._updateResponsiveAspect();
+      });
       // Gated on editable + fit=cover so share links and contain/fill slots
       // stay static.
       this.addEventListener('dblclick', (e) => {
@@ -572,6 +577,24 @@
       else { this._local = v; }
     }
 
+    _updateResponsiveAspect() {
+      const iw = this._img.naturalWidth || 0;
+      const ih = this._img.naturalHeight || 0;
+      const isMobile = typeof window !== 'undefined' && window.matchMedia('(max-width:760px)').matches;
+      if (!iw || !ih) return;
+      if (isMobile) {
+        this.style.width = '100%';
+        this.style.maxWidth = '100%';
+        this.style.height = 'auto';
+        this.style.aspectRatio = `${iw} / ${ih}`;
+      } else {
+        if (this._originalHeight) this.style.height = this._originalHeight;
+        else this.style.removeProperty('height');
+        if (this._originalAspectRatio) this.style.aspectRatio = this._originalAspectRatio;
+        else this.style.removeProperty('aspect-ratio');
+      }
+    }
+
     _render() {
       // Shape / mask. Presets use border-radius so the dashed ring can
       // follow the rounded outline; clip-path is only applied for an
@@ -626,6 +649,7 @@
         this.setAttribute('data-filled', '');
         this._clampView();
         this._applyView();
+        this._updateResponsiveAspect();
       } else {
         this._img.style.display = 'none';
         this._img.removeAttribute('src');
