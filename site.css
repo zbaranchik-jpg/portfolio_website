@@ -131,7 +131,7 @@ body.has-cursor a, body.has-cursor button, body.has-cursor .work-row{ cursor:non
 }
 .hero-reveal-base, .hero-reveal-top{
   position:absolute; inset:0; width:100%; height:100%;
-  background-image:var(--img); background-size:contain; background-position:center center;
+  background-image:var(--img); background-size:cover; background-position:center center;
   background-repeat:no-repeat;
   border-radius:50%;
   -webkit-mask-repeat:no-repeat; mask-repeat:no-repeat;
