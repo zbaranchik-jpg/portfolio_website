@@ -45,7 +45,8 @@ body{
   font-weight:400; overflow-x:hidden;
 }
 a{ color:inherit; text-decoration:none; }
-img{ max-width:100%; display:block; }
+img{ max-width:100%; width:auto; height:auto; display:block; }
+image-slot{ display:block; max-width:100%; width:auto; }
 ::selection{ background:var(--accent-tint); color:var(--accent-deep); }
 
 /* custom cursor: hide native on fine pointers when enabled */
@@ -493,6 +494,16 @@ image-slot::part(empty){ color:var(--ink-soft); }
 }
 @media (max-width:760px){
   .ship-grid{ grid-template-columns:1fr; } .ship-empty{ display:none; }
+  image-slot{ width:100%; }
+  .case-hero-media,
+  .media,
+  .mw-media,
+  .cursor-preview,
+  .work-row,
+  .mw-row,
+  .glance,
+  .cols-2,
+  .cols-3{ min-width:0; }
 }
 @media (max-width:680px){
   body{ font-size:16px; }
