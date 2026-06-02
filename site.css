@@ -124,8 +124,8 @@ body.has-cursor a, body.has-cursor button, body.has-cursor .work-row{ cursor:non
 /* hover-reveal spotlight image on the right of the hero */
 .hero-spotlight{
   position:absolute; z-index:2; cursor:crosshair;
-  top:calc(clamp(64px,11vh,128px) - 16px); right:clamp(24px,8vw,150px);
-  width:min(40vw,440px); aspect-ratio:1/1;
+  top:calc(clamp(64px,11vh,128px) - 16px); right:clamp(12px,4vw,80px);
+  width:min(55vw,640px); aspect-ratio:1/1;
   --mx:50%; --my:50%; --spot-r:0px;
   --img:url('assets/portrait.jpeg');
 }
