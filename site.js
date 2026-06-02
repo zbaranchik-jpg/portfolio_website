@@ -126,7 +126,10 @@
     rows.forEach(function (row) {
       row.addEventListener('mouseenter', function () {
         var id = row.getAttribute('data-preview');
+        var src = row.getAttribute('data-preview-src');
         if (id) previewSlot.setAttribute('id', id);
+        if (src) previewSlot.setAttribute('src', src);
+        else previewSlot.removeAttribute('src');
         active = true; preview.classList.add('on');
       });
       row.addEventListener('mouseleave', function () { active = false; preview.classList.remove('on'); });
