@@ -507,7 +507,7 @@ image-slot::part(empty){ color:var(--ink-soft); }
   .metrics{ grid-template-columns:1fr; }
   .case-hero-media{ height: clamp(260px, 38vw, 520px); }
   .hero{ padding: clamp(56px, 8vw, 92px) 0 clamp(36px, 7vw, 56px); }
-  .hero p.lead{ max-width: 100%; }
+  .hero p.lead{ max-width: 736px; }
   .foot-grid{ gap: 24px 40px; }
 }
 @media (max-width:760px){
