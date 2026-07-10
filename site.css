@@ -364,10 +364,10 @@ body.has-cursor a, body.has-cursor button, body.has-cursor .work-row{ cursor:non
 /* media blocks */
 .media{ width:100%; }
 .figure{ margin:0; }
-/* aspect-ratio wrapper: inline style sets aspect-ratio, child fills absolutely */
-.cs-img{ display:block; width:100%; position:relative; }
+/* image block: image-slot carries its own aspect-ratio inline style and sizes itself */
+.cs-img{ display:block; width:100%; }
 .cs-img > image-slot,
-.cs-img > img{ position:absolute; inset:0; width:100%; height:100%; display:block; }
+.cs-img > img{ display:block; width:100%; height:auto; }
 .figcap{ font-family:var(--mono); font-size:11px; letter-spacing:.06em; color:var(--ink-faint); margin-top:12px; text-transform:uppercase; }
 
 /* comparison table */
