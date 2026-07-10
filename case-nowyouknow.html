@@ -3,9 +3,14 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>NowYouKnow — Zhenya Baranchik</title>
-<meta name="description" content="NowYouKnow — redesigning a learning app from V2 to V3: strategy, brand, system, and core product in under a year." />
+<title>Now You Know - Zhenya Baranchik</title>
+<meta name="description" content="Now You Know - from a video library to a guided learning journey. The full V3 redesign: product direction, learning loop, Guided Practice, and design system." />
 <link rel="stylesheet" href="site.css" />
+<style>
+  /* Custom elements are inline by default, which leaves a line-box gap below
+     the rounded image where the slot's grey backing peeks out. Block removes it. */
+  .figure image-slot{ display: block; }
+</style>
 </head>
 <body>
 <div class="reading-progress"></div>
@@ -22,79 +27,57 @@
 </header>
 
 <main>
-<!-- CASE HERO -->
+<!-- OVERVIEW / HERO -->
 <section class="case-hero">
   <div class="wrap">
     <a href="index.html#work" class="case-back">←</a>
     <div class="case-kicker reveal">
-      <span class="tag">Consumer app</span>
-      <span class="tag">Mobile</span>
+      <span class="tag">Consumer App</span>
+      <span class="tag">Now You Know</span>
       <span class="tag">2026</span>
     </div>
-    <h1 class="case-title reveal reveal-d1">NowYouKnow</h1>
-    <p class="case-sub reveal reveal-d2">Redesigning a learning app from V2 to V3 — strategy, brand, system, and core product in <span class="serif-i accent" style="font-family: &quot;Space Grotesk&quot;; font-weight: 700; color: rgb(25, 24, 24)">half a year</span>.</p>
-    <figure class="figure reveal reveal-d3">
-      <img class="case-hero-media clip in" id="nyk-hero" src="images/Hero-NYK(new1).png" alt="NowYouKnow hero visual" style="width:100%; height:auto; display:block; border-radius:16px;" />
+    <h1 class="case-title reveal reveal-d1">Now You Know</h1>
+    <p class="case-sub reveal reveal-d2">From a video library to a guided learning journey.</p>
+    <figure class="figure reveal reveal-d3" style="margin-top: clamp(30px,4.5vh,48px);">
+      <div class="cs-img case-hero-media clip in" style="aspect-ratio:2448/1262;">
+        <image-slot id="nyk-hero" src="assets/nyk-hero-new.webp" shape="rounded" radius="20" placeholder="Now You Know V3 - Journey, skill preview, and Guided Practice screens" aria-label="Now You Know V3 - Journey, skill preview, and Guided Practice screens" fit="contain"></image-slot>
+      </div>
     </figure>
+    <div class="prose indent reveal reveal-d2" style="margin-top: clamp(30px,4.5vh,48px);">
+      <p class="lede">Now You Know is a learning product focused on short, practical lifestyle skills.</p>
+      <p style="margin-top: 24px;">When I joined the company, the product already had users coming mainly through paid acquisition, but the experience was still closer to a video content library than a guided learning product. Users could watch skill-based videos, but the app did not give them a strong enough reason to keep progressing, complete more skills, or return regularly.</p>
+      <p>As the only Product Designer, I redesigned the product from V2 to V3 end to end. My work included the main product flows, UX, UI, visual direction, design system, components, states, handoff, and design QA.</p>
+      <p>The goal was not only to make the app look better. The goal was to create a clearer and more engaging product experience: one with progress, motivation, rewards, practice, and a stronger reason to return.</p>
+    </div>
   </div>
 </section>
 
-<!-- AT A GLANCE -->
-<section class="wrap">
-  <dl class="glance reveal">
-    <div class="cell"><dt>Role</dt><dd>Sole Product Designer</dd></div>
-    <div class="cell"><dt>Team</dt><dd>Founder (acting PM / VP Product) · 4 developers · me</dd></div>
-    <div class="cell"><dt>Timeframe</dt><dd>6 months · V2 → V3 → iteration → Play hub</dd></div>
-    <div class="cell"><dt>Type</dt><dd>Mobile skill-learning app, consumer</dd></div>
-  </dl>
-</section>
-
-<!-- WHAT I SHIPPED -->
+<!-- THE PROBLEM -->
 <section class="chapter">
   <div class="wrap">
     <div class="chapter-head reveal">
-      <span class="chapter-no">What I shipped</span>
-      <h2>A new product direction — and everything needed to launch it.</h2>
+      <span class="chapter-no">01</span>
+      <h2>The problem</h2>
+    </div>
+    <div class="prose indent reveal reveal-d1">
+      <p>The V2 experience was mostly built around watching skill videos. Users could consume the content, but the product did not create a strong learning loop.</p>
+      <p>There were several related problems:</p>
     </div>
     <ul class="bullets reveal reveal-d1">
-      <li>A new product direction: a <strong>journey-based</strong> skill-learning app with guided practice at the heart of it.</li>
-      <li>A visual identity from scratch and a working <strong>design system in Figma</strong> — variables, tokens, components used consistently across the product.</li>
-      <li>The full <strong>V3 product at launch</strong>: journeys with progressive unlocking, guided practice, achievements &amp; milestones.</li>
-      <li>An in-person <strong>dev handoff workshop in Hungary</strong>.</li>
-      <li>Post-launch iteration on journey flows, driven by <strong>Amplitude</strong>.</li>
-      <li>The <strong>Play hub</strong> — three games: trivia, match, swipe true/false.</li>
+      <li>The app felt more like a content library than a guided learning journey.</li>
+      <li>Users did not have a clear sense of progress, achievement, or reward.</li>
+      <li>There was no strong reason to continue after watching the first few videos.</li>
+      <li>The experience did not feel personal enough around the user&rsquo;s selected skill.</li>
+      <li>The UI and product structure were not consistent enough, which could make some flows harder to understand.</li>
     </ul>
-  </div>
-</section>
-
-<!-- HOW I WORKED -->
-<section class="chapter">
-  <div class="wrap">
-    <div class="chapter-head reveal">
-      <span class="chapter-no">How I worked</span>
-      <h2>A modern, AI-accelerated design workflow.</h2>
+    <div class="prose indent reveal" style="margin-top: clamp(28px,4vh,44px);">
+      <p>The team had product signals showing that users were not progressing deeply through the available content. We looked at learning-related metrics such as retention, completion, first skill starts and completions, onboarding completion, and D7 / D30 retention.</p>
+      <p>I do not have access to all exact numbers today, so I avoid presenting metrics I cannot verify. But the direction was clear: the product needed more than better screens. It needed a stronger product system.</p>
     </div>
-    <div class="prose indent reveal reveal-d1">
-      <p>I used AI tools throughout — both to move faster and to stay close to how the field is changing. GPT, Gemini, Claude, and Perplexity for research synthesis and competitive analysis; NotebookLM for digesting source material; Lovable, Figma Make and Figma agents for rapid prototyping and visual exploration; and AI assistance inside the design process itself, including Figma.</p>
-      <p><strong>AI accelerated the work — the strategy, judgment, and design decisions were mine.</strong></p>
-    </div>
-  </div>
-</section>
-
-<!-- CONTEXT -->
-<section class="chapter">
-  <div class="wrap">
-    <div class="chapter-head reveal">
-      <span class="chapter-no">Context</span>
-      <h2>A learning app without a sharp answer to “why open it tomorrow?”</h2>
-    </div>
-    <div class="prose indent reveal reveal-d1">
-      <p>When I joined, V2 had three problems: <strong>confusing UX and UI, and weak positioning</strong> — a “learning app” without a sharp answer to why someone would open it tomorrow.</p>
-      <p>The team was small: a founder (acting PM / VP Product), four developer, and me. No PM. The founder, other team members and I co-led strategy together.</p>
-    </div>
-    <figure class="figure media-row reveal reveal-d2">
-      <img class="media wide" id="nyk-v2" src="images/nyk-v2.webp" alt="Three mobile screens from NowYouKnow V2 showing the original home feed, lesson list, and lesson detail layouts" style="width:100%; height:auto; display:block; border-radius:16px;" />
-      <figcaption class="figcap">V2 at the time I joined.</figcaption>
+    <figure class="figure media-row reveal">
+      <div class="cs-img" style="aspect-ratio:1200/900;">
+        <image-slot src="assets/slot-nyk-v2.webp" id="nyk-v2" shape="rounded" radius="16" placeholder="Now You Know V2 - the earlier video / content library experience" aria-label="Now You Know V2 - the earlier video / content library experience" fit="contain"></image-slot>
+      </div>
     </figure>
   </div>
 </section>
@@ -103,167 +86,158 @@
 <section class="chapter">
   <div class="wrap">
     <div class="chapter-head reveal">
-      <span class="chapter-no">My role</span>
-      <h2>Design end-to-end — and strategy alongside the founder.</h2>
+      <span class="chapter-no">02</span>
+      <h2>My role</h2>
+    </div>
+    <div class="prose indent reveal reveal-d1">
+      <p>I was the only Product Designer on the project, so my role covered the full V3 redesign process.</p>
+      <p>I worked on:</p>
     </div>
     <ul class="bullets reveal reveal-d1">
-      <li><strong>All design end-to-end</strong> — research, flows, visual identity, design system, prototypes, edge cases, dev handoff.</li>
-      <li><strong>Co-led strategy with the founder.</strong> He set business priorities; I pushed for user clarity and design integrity.</li>
-      <li><strong>No PM intermediary</strong> — I defended decisions directly to founders, and learned when to fight for an idea and when to let go.</li>
+      <li>product flows and UX structure;</li>
+      <li>UI design and visual direction;</li>
+      <li>onboarding, Journey, skill pages, lessons, quizzes, rewards, Guided Practice, games, Now tab, Library, profile, and settings;</li>
+      <li>edge cases, empty states, loading states, and interaction states;</li>
+      <li>the design system from scratch;</li>
+      <li>handoff and collaboration with developers;</li>
+      <li>product discussions with founders and stakeholders.</li>
     </ul>
+    <div class="prose indent reveal" style="margin-top: clamp(28px,4vh,44px);">
+      <p>Because the team was small, my role was not limited to screen design. I participated in product discussions, explored different directions, challenged decisions when needed, and helped turn product ideas into usable flows.</p>
+    </div>
   </div>
 </section>
 
-<!-- CHAPTER 1 -->
+<!-- PRODUCT DIRECTION -->
 <section class="chapter">
   <div class="wrap">
     <div class="chapter-head reveal">
-      <span class="chapter-no">Chapter 1</span>
-      <h2>Reframing the product</h2>
+      <span class="chapter-no">03</span>
+      <h2>Product direction</h2>
     </div>
     <div class="prose indent reveal reveal-d1">
-      <p class="lede" style="max-width:48ch;">The biggest shift from V2 to V3 wasn&rsquo;t visual. It was <span class="serif-i" style="color: rgb(27, 23, 20); font-weight: 700">strategic</span>.</p>
-      <p style="margin-top:26px; font-weight: 400">V2 was mainly focused on learning. V3 evolved into a <strong>journey-based skill-learning experience</strong>, helping users actively practice what they learn and build lasting habits through the app.</p>
-      <p>That shaped V3 around four pillars:</p>
+      <p>The main product shift was:</p>
+      <p style="margin-top: 16px;">From passive video watching to a guided learning journey.</p>
     </div>
-    <div class="cols-2 media-row reveal reveal-d2">
-      <div class="card"><div class="k">Pillar 01</div><h3>Journeys with progressive unlocking</h3><p>The path opens as users progress.</p></div>
-      <div class="card"><div class="k">Pillar 02</div><h3>The Now tab</h3><p>Time-limited skills that give a reason to open the app today.</p></div>
-      <div class="card"><div class="k">Pillar 03</div><h3>Guided practice</h3><p>Most learning apps stop at content. We didn&rsquo;t.</p></div>
-      <div class="card"><div class="k">Pillar 04</div><h3>Achievements and milestones</h3><p>The motivation layer.</p></div>
+    <div class="prose indent reveal">
+      <p>Instead of opening the app and seeing a flat set of videos, users would now enter a more structured experience. They would choose a skill, start a learning journey, complete lessons, answer short quizzes, receive rewards, and continue into practical guided exercises.</p>
+      <p>The goal was to connect the main parts of the product into one loop:</p>
     </div>
-  </div>
-</section>
-
-<!-- CHAPTER 2 -->
-<section class="chapter">
-  <div class="wrap">
-    <div class="chapter-head reveal">
-      <span class="chapter-no">Chapter 2</span>
-      <h2>Design system &amp; visual language</h2>
+    <blockquote class="lede reveal" style="margin: clamp(16px,2.5vh,26px) 0; max-width: 30ch;">Choose &rarr; Learn &rarr; Reinforce &rarr; Feel progress &rarr; Practice &rarr; Continue</blockquote>
+    <div class="prose indent reveal">
+      <p>This gave the app a stronger structure and helped make the experience feel more personal, motivating, and complete.</p>
     </div>
-    <div class="prose indent reveal reveal-d1">
-      <p>V2&rsquo;s visuals didn&rsquo;t have a point of view. For V3 I built the brand from scratch and a system to hold it together.</p>
-      <p><strong>The aesthetic.</strong> Warm and editorial. Painterly textures, sparkle motifs, a dark backdrop. A learning app that feels like a magazine, not a classroom.</p>
-    </div>
-    <div class="prose indent reveal reveal-d2">
-      <p><strong>The system.</strong> Variables and tokens for color, type, spacing, and radius — one change propagated everywhere. Reusable components for everything we used repeatedly (buttons, cards, navigation, progress, journey cards, achievements, modals), with all states covered. Used consistently across journeys, Now, guided practice, achievements, and later Play.</p>
-    </div>
-    <div class="stack media-row">
-      <figure class="figure reveal"><img class="media" id="nyk-ds-square" src="images/nyk-ds-square.webp" alt="Design system overview: component thumbnails, color tokens, and example UI elements arranged in a square grid" style="width:100%; height:auto; display:block; border-radius:16px;" /></figure>
-      <figure class="figure reveal reveal-d1"><img class="media" id="nyk-ds-wide" src="images/nyk-ds-wide.webp" alt="Wide banner showing typography samples, color palette, and textured backgrounds used in the app's visual language" style="width:100%; height:auto; display:block; border-radius:16px;" /></figure>
-    </div>
-  </div>
-</section>
-
-<!-- CHAPTER 3 -->
-<section class="chapter">
-  <div class="wrap">
-    <div class="chapter-head reveal">
-      <span class="chapter-no">Chapter 3</span>
-      <h2>V3 at launch — journeys, Now, guided practice, achievements</h2>
-    </div>
-    <div class="prose indent reveal reveal-d1"><p>I designed all four pillars end-to-end.</p></div>
-    <div class="stack media-row">
-      <figure class="figure reveal">
-        <img class="media tall" id="nyk-journey" src="images/nyk-journey.webp" alt="Mobile screens illustrating a user journey flow with progress timeline, unlocked steps, and milestone states" style="width:100%; height:auto; display:block; border-radius:16px;" />
-        <figcaption class="figcap">Journeys with progressive unlocking — skill paths where content opens over time: structure, unlock states, progress visualization.</figcaption>
-      </figure>
-      <div class="cols-2">
-        <figure class="figure reveal">
-          <img class="media mid" id="nyk-now" src="images/nyk-now.webp" alt="Now tab screens showing time-limited skill cards, navigation, and quick start CTAs on mobile" style="width:100%; height:auto; display:block; border-radius:16px;" />
-          <figcaption class="figcap">The Now tab — time-limited skills that give users a reason to open the app today.</figcaption>
-        </figure>
-        <figure class="figure reveal reveal-d1">
-          <img class="media mid" id="nyk-achievements" src="images/nyk-achievements.webp" alt="Achievement badges and milestone screens showing earned certificates and progress rewards" style="width:100%; height:auto; display:block; border-radius:16px;" />
-          <figcaption class="figcap">Achievements and milestones — the motivation layer, with custom illustrations like the hand-drawn brick road.</figcaption>
-        </figure>
+    <figure class="figure media-row reveal">
+      <div class="cs-img" style="aspect-ratio:10044/4048;">
+        <image-slot src="assets/nyk-mainloop.jpg" id="nyk-loop" shape="rounded" radius="16" placeholder="Product direction — main learning loop: Journey, Skill Player, Certificate, Guided Practice, Achievements" aria-label="Product direction — main learning loop: Journey, Skill Player, Certificate, Guided Practice, Achievements" fit="contain"></image-slot>
       </div>
-      <figure class="figure reveal">
-        <img class="media tall" id="nyk-practice" src="images/nyk-practice.webp" alt="Guided practice screens with interactive exercises, media previews, and progress controls" style="width:100%; height:auto; display:block; border-radius:16px;" />
-        <figcaption class="figcap">Guided practice — the product&rsquo;s USP. At the end of each skill, users move from passive learning to actually applying it.</figcaption>
-      </figure>
-    </div>
+    </figure>
   </div>
 </section>
 
-<!-- CHAPTER 4 -->
+<!-- MAIN LEARNING LOOP -->
 <section class="chapter">
   <div class="wrap">
     <div class="chapter-head reveal">
-      <span class="chapter-no">Chapter 4</span>
-      <h2>Dev handoff in Hungary</h2>
+      <span class="chapter-no">04</span>
+      <h2>Main learning loop</h2>
     </div>
     <div class="prose indent reveal reveal-d1">
-      <p>Before V3 launch, three of us flew to Hungary to work with the engineering team in person.</p>
+      <p>The most important flow was the first learning loop.</p>
+      <p>After onboarding, the user selected their first skill and landed on a Journey screen. From there, they could preview the skill, watch a trailer, start the first lesson, complete a short quiz, receive a reward, and continue into Guided Practice.</p>
+      <p>Guided Practice was originally a product idea from the founders. My role was to turn it into a clear step-by-step flow that helped users move from &ldquo;I watched this&rdquo; to &ldquo;I can actually do this.&rdquo;</p>
+      <p>This flow was important because it connected the app&rsquo;s main value into one clear loop: learning, reinforcement, progress, reward, and practice.</p>
+      <p>Now You Know could not compete only as a place to watch videos, because users could find free educational content elsewhere. The app needed to create value through structure, guidance, progress, and practice.</p>
     </div>
-    <div>
-      <ul class="bullets tight reveal">
-        <li>Sprint planning and kickoff</li>
-        <li>Tech spec review and scoping</li>
-        <li>Design reviews — every flow, edge case, motion spec</li>
-        <li>Open questions resolved in the room, not over Slack weeks later</li>
-      </ul>
-      <div class="prose indent reveal reveal-d1" style="margin-top:32px;">
-        <p>Being together meant fewer surprises during build, faster decisions, and a shared understanding of <em>why</em> — not just what.</p>
+    <figure class="figure media-row reveal">
+      <div class="cs-img" style="aspect-ratio:2600/1336;">
+        <image-slot src="assets/slot-nyk-journey.webp" id="nyk-journey" shape="rounded" radius="16" placeholder="Journey screen with the first skill and lesson flow" aria-label="Journey screen with the first skill and lesson flow" fit="contain"></image-slot>
       </div>
-    </div>
+    </figure>
   </div>
 </section>
 
-<!-- CHAPTER 5 -->
+<!-- DESIGN SYSTEM -->
 <section class="chapter">
   <div class="wrap">
     <div class="chapter-head reveal">
-      <span class="chapter-no">Chapter 5</span>
-      <h2>Post-launch iteration</h2>
+      <span class="chapter-no">05</span>
+      <h2>Design system</h2>
     </div>
     <div class="prose indent reveal reveal-d1">
-      <p>After V3 shipped, the work shifted from “redesign” to <strong>“evolve based on what users actually do.”</strong></p>
-      <p>Using Amplitude with the founder, I prioritized fixes on the onboarding flow and the journey flow — refining how users move through skills and how progress connects back to achievements. One example: Amplitude showed users dropping off at the first skill-selection step. I redesigned the copy, hierarchy, and CTA, and the drop-off went away. Smaller iterations included skill-selection card improvements and motivational beats throughout the journey.</p>
+      <p>Alongside the redesign, I created the V3 design system from scratch in Figma.</p>
+      <p>The system included colors, typography, variables, reusable components, variants, states, icons, illustrations, buttons, inputs, cards, modals, and key UI patterns.</p>
+      <p>The goal was to make the app more consistent and easier to scale. Since the product included many different areas - learning flows, rewards, games, skill pages, profile, Library, and Now tab - the system helped create a more unified product experience.</p>
+      <p>I also prepared partial handoff notes and specs for developers where needed. The documentation was not fully completed because of startup timelines, but the design system gave the team a stronger foundation for future features and iterations.</p>
     </div>
+    <figure class="figure media-row reveal">
+      <div class="cs-img" style="aspect-ratio:2600/1086;">
+        <image-slot src="assets/slot-nyk-ds-wide.webp" id="nyk-ds-wide" shape="rounded" radius="16" placeholder="Design system in Figma: color tokens, typography, and variables" aria-label="Design system in Figma: color tokens, typography, and variables" fit="contain"></image-slot>
+      </div>
+      <div class="cs-img" style="aspect-ratio:2600/2418; margin-top: clamp(12px,1.8vw,22px);">
+        <image-slot src="assets/slot-nyk-ds-square.webp" id="nyk-ds-square" shape="rounded" radius="16" placeholder="Design system in Figma: components, buttons, cards, and states" aria-label="Design system in Figma: components, buttons, cards, and states" fit="contain"></image-slot>
+      </div>
+    </figure>
   </div>
 </section>
 
-<!-- CHAPTER 6 -->
+<!-- POST-LAUNCH ITERATIONS -->
 <section class="chapter">
   <div class="wrap">
     <div class="chapter-head reveal">
-      <span class="chapter-no">Chapter 6</span>
-      <h2>Play hub</h2>
+      <span class="chapter-no">06</span>
+      <h2>Post-launch iterations</h2>
     </div>
     <div class="prose indent reveal reveal-d1">
-      <p>The last major addition. A dedicated space for game-based learning alongside the journey.</p>
-      <p>I designed the hub architecture, the visual language for game cards, the navigation, and the entry points from the main app. Three games at launch:</p>
+      <p>After the V3 release, we continued iterating based on product signals and team feedback.</p>
+      <p>We changed parts of onboarding after seeing a noticeable drop, refined parts of the Journey experience, updated the Now tab, and added three types of games to create more lightweight reasons to return to the app.</p>
+      <p>We also gave users the option to change their selected skill, explored improvements to Guided Practice and its access points, and continued improving motion, transitions, and micro-interactions to make the experience feel smoother and more engaging.</p>
+      <p>This part of the work was important because it showed that the redesign was not only about launching a new UI. It became an evolving product direction.</p>
     </div>
-    <div class="cols-3 media-row reveal reveal-d2">
-      <div class="card"><div class="k">Game 01</div><h3>Trivia</h3><p>Quick knowledge checks.</p></div>
-      <div class="card"><div class="k">Game 02</div><h3>Match</h3><p>Pairing exercises.</p></div>
-      <div class="card"><div class="k">Game 03</div><h3>Swipe — true/false</h3><p>Fast binary decisions with a custom gesture system.</p></div>
+    <figure class="figure media-row reveal">
+      <div class="cs-img" style="aspect-ratio:2600/1748;">
+        <image-slot src="assets/slot-nyk-play-1.webp" id="nyk-play-1" shape="rounded" radius="16" placeholder="Game screen added after launch" aria-label="Game screen added after launch" fit="contain"></image-slot>
+      </div>
+      <div class="cs-img" style="aspect-ratio:2600/1748; margin-top: clamp(12px,1.8vw,22px);">
+        <image-slot src="assets/slot-nyk-play-2.webp" id="nyk-play-2" shape="rounded" radius="16" placeholder="Game screen added after launch" aria-label="Game screen added after launch" fit="contain"></image-slot>
+      </div>
+      <figcaption class="figcap">After launch, we continued improving engagement through onboarding changes, Journey refinements, games, Now tab updates, and interaction improvements.</figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- OUTCOME AND LEARNINGS -->
+<section class="chapter">
+  <div class="wrap">
+    <div class="chapter-head reveal">
+      <span class="chapter-no">07</span>
+      <h2>Outcome and learnings</h2>
     </div>
-    <div class="prose indent reveal reveal-d2" style="margin-top:8px;">
-      <p>Play gave the product room to grow without overloading the core journey.</p>
-    </div>
-    <div class="stack media-row">
-      <figure class="figure reveal"><img class="media" id="nyk-play-1" src="images/nyk-play-1.webp" alt="Play hub overview showing game cards for Trivia, Match, and Swipe games on mobile" style="width:100%; height:auto; display:block; border-radius:16px;" /></figure>
-      <figure class="figure reveal reveal-d1"><img class="media" id="nyk-play-2" src="images/nyk-play-2.webp" alt="Gameplay screen showing a multiple-choice question, answer selection, and progress indicator" style="width:100%; height:auto; display:block; border-radius:16px;" /></figure>
+    <div class="prose indent reveal reveal-d1">
+      <p>The V3 product was shipped and used by real users.</p>
+      <p>The early part of the learning loop worked reasonably well: users were starting and completing early skills. But progression into later skills remained difficult. Fewer users reached the third, fourth, or fifth skill.</p>
+      <p>This was influenced by several factors beyond the redesign itself: lower traffic, fewer new customers, and changes in content production. Earlier videos were produced with real people and felt more polished and engaging, while later content was created differently and did not always create the same level of perceived value.</p>
+      <p>For me, the biggest learning was that retention in a learning product cannot be solved by UX alone.</p>
+      <p>The product experience, motivation system, content quality, perceived value, and acquisition all need to work together.</p>
+      <p>Still, the redesign created a stronger product foundation. It moved Now You Know from a passive content experience toward a guided learning system with progress, rewards, practice, and a design system that could support future product growth.</p>
     </div>
   </div>
 </section>
 
-<!-- WHAT I LEARNED -->
+<!-- WHAT I WOULD DO DIFFERENTLY -->
 <section class="chapter">
   <div class="wrap">
     <div class="chapter-head reveal">
-      <span class="chapter-no">What I learned</span>
-      <h2 style="font-family: &quot;Space Grotesk&quot;; font-weight: 600">Five things this taught me.</h2>
+      <span class="chapter-no">08</span>
+      <h2>What I would do differently</h2>
+    </div>
+    <div class="prose indent reveal reveal-d1">
+      <p>If I had more time and access to users, I would improve three things:</p>
     </div>
     <ul class="bullets reveal reveal-d1">
-      <li>Strategy isn&rsquo;t a separate phase from design in a small team.</li>
-      <li>A design system is a force multiplier even at small scale.</li>
-      <li>Handoff is collaborative, not a deliverable.</li>
-      <li>Working without a PM is a skill, not a gap.</li>
-      <li>Visual identity is product strategy.</li>
+      <li>Validate the biggest assumptions earlier through user interviews and usability testing, especially around why users choose Now You Know and how they compare it to free alternatives like YouTube.</li>
+      <li>Test the core Journey and Guided Practice flows before development, because these were the most important parts of the new product direction.</li>
+      <li>Create a stricter design QA process with developers to better protect spacing, hierarchy, motion, transitions, and interaction details in the final implementation.</li>
     </ul>
   </div>
 </section>
@@ -274,7 +248,9 @@
     <div class="np-label reveal">More work</div>
     <div class="mw-grid">
       <div class="mw-card reveal" data-href="case-automation.html" data-cursor="view" data-cursor-label="Open">
-        <img class="mw-media" id="auto-hero" src="images/auto-hero.webp" alt="Automation Center project preview showing rule builder UI" style="width:100%; height:auto; display:block; border-radius:16px;" />
+        <div class="cs-img mw-media" style="aspect-ratio:2600/1888;">
+        <image-slot src="assets/slot-auto-hero.webp" id="auto-hero" shape="rounded" radius="16" placeholder="Automation Revamp - main image" fit="contain"></image-slot>
+      </div>
         <div class="mw-row">
           <div>
             <a href="case-automation.html" class="mw-title">Automation Revamp</a>
@@ -283,7 +259,9 @@
         </div>
       </div>
       <div class="mw-card reveal reveal-d1" data-href="case-equipment.html" data-cursor="view" data-cursor-label="Open">
-        <img class="mw-media" id="equip-hero" src="images/equip-hero.webp" alt="Equipment Tracking project preview showing key screens" style="width:100%; height:auto; display:block; border-radius:16px;" />
+        <div class="cs-img mw-media" style="aspect-ratio:1448/1086;">
+        <image-slot src="assets/slot-equip-hero.webp" id="equip-hero" shape="rounded" radius="16" placeholder="Equipment Tracking - main image" fit="contain"></image-slot>
+      </div>
         <div class="mw-row">
           <div>
             <a href="case-equipment.html" class="mw-title">Equipment Tracking</a>
@@ -304,18 +282,19 @@
       <div class="foot-col"><span>Zhenya Baranchik (Tel Aviv)</span></div>
       <div class="foot-col"><a href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=zbaranchik@gmail.com" target="_blank" rel="noopener">zbaranchik@gmail.com</a></div>
       <div class="foot-col"><a href="tel:+972527330292">052 733 0292</a></div>
-      <div class="foot-col"><a href="https://www.linkedin.com/in/zhenya-baranchik-ba61b7147/" target="_blank" rel="noopener" style="color: rgb(255, 255, 255)">View profile ↗</a></div>
+      <div class="foot-col"><a href="https://www.linkedin.com/in/zhenya-baranchik-ba61b7147/" target="_blank" rel="noopener" style="color: rgb(255, 255, 255)">LinkedIn ↗</a></div>
     </div>
   </div>
 </footer>
 
 <script src="image-slot.js"></script>
 <script src="site.js"></script>
+<script src="tweaks.js"></script>
 
 <template id="__bundler_thumbnail" data-bg-color="#1B1714">
   <svg viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
     <rect width="1200" height="800" fill="#1B1714"/>
-    <text x="600" y="430" text-anchor="middle" font-family="'Space Grotesk', Helvetica, Arial, sans-serif" font-size="120" font-weight="700" fill="#FAF8F4" letter-spacing="-4">NowYouKnow</text>
+    <text x="600" y="430" text-anchor="middle" font-family="'Space Grotesk', Helvetica, Arial, sans-serif" font-size="112" font-weight="700" fill="#FAF8F4" letter-spacing="-4">Now You Know</text>
     <circle cx="600" cy="520" r="10" fill="#EA3A12"/>
   </svg>
 </template>

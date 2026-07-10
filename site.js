@@ -121,15 +121,22 @@
   var preview = $('.cursor-preview');
   var previewSlot = preview ? $('image-slot', preview) : null;
   var rows = $$('.work-row[data-preview]');
+  // Project heroes now live as files (the sidecar was retired to keep drops
+  // reliable), so the hover preview points the slot straight at the file.
+  var HERO_SRC = {
+    'nyk-hero': 'assets/nyk-hero-new.webp',
+    'auto-hero': 'assets/slot-auto-hero.webp',
+    'equip-hero': 'assets/slot-equip-hero.webp'
+  };
   if (preview && previewSlot && rows.length && fine && !reduce) {
     var px = window.innerWidth / 2, py = window.innerHeight / 2, cx = px, cy = py, active = false;
     rows.forEach(function (row) {
       row.addEventListener('mouseenter', function () {
         var id = row.getAttribute('data-preview');
-        var src = row.getAttribute('data-preview-src');
-        if (id) previewSlot.setAttribute('id', id);
-        if (src) previewSlot.setAttribute('src', src);
-        else previewSlot.removeAttribute('src');
+        if (id) {
+          previewSlot.setAttribute('id', id);
+          if (HERO_SRC[id]) previewSlot.setAttribute('src', HERO_SRC[id]);
+        }
         active = true; preview.classList.add('on');
       });
       row.addEventListener('mouseleave', function () { active = false; preview.classList.remove('on'); });
