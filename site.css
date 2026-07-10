@@ -441,6 +441,7 @@ body.has-cursor a, body.has-cursor button, body.has-cursor .work-row{ cursor:non
 .mw-card{ display:block; cursor:pointer; }
 .mw-media{ width:100%; margin-bottom:clamp(18px,2.4vh,24px);
   transition:transform .5s var(--ease); }
+.mw-media image-slot{ background:transparent; }
 .mw-card:hover .mw-media{ transform:translateY(-4px); }
 .mw-row{ display:flex; align-items:flex-start; justify-content:space-between; gap:18px; }
 .mw-tag{ font-family:var(--mono); font-size:11px; letter-spacing:.12em; text-transform:uppercase; color:var(--ink-faint); margin-bottom:9px; }
