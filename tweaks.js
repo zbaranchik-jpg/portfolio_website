@@ -9,7 +9,7 @@
 
   /* ---- accent palettes ------------------------------------ */
   var ACCENTS = {
-    red:  { '--accent': '#EA3A12', '--accent-deep': '#C72E0B', '--accent-tint': '#FBD9CE' },
+    red:  { '--accent': '#FF41AC', '--accent-deep': '#E01B8E', '--accent-tint': '#FFD8EC' },
     blue: { '--accent': '#1F50E6', '--accent-deep': '#1740C4', '--accent-tint': '#DCE4FF' }
   };
 
@@ -47,10 +47,10 @@
       '</div>' +
       '<div class="tw-section">Accent colour</div>' +
       '<div class="tw-seg" role="group">' +
-        '<button data-accent="red"><span class="tw-sw" style="background:#EA3A12"></span>Red</button>' +
+        '<button data-accent="red"><span class="tw-sw" style="background:#FF41AC"></span>Pink</button>' +
         '<button data-accent="blue"><span class="tw-sw" style="background:#1F50E6"></span>Blue</button>' +
       '</div>' +
-      '<p class="tw-hint">Recolours every red accent across the site - numbers, links, brand mark, cursor and hover states.</p>';
+      '<p class="tw-hint">Recolours every accent across the site - numbers, links, brand mark, cursor and hover states.</p>';
 
     document.body.appendChild(panel);
 

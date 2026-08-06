@@ -9,6 +9,15 @@
   var $ = function (s, c) { return (c || document).querySelector(s); };
   var $$ = function (s, c) { return Array.prototype.slice.call((c || document).querySelectorAll(s)); };
 
+  /* ---------- always land at the top on load (no browser scroll restore) ---------- */
+  // The hero's scroll-linked portrait zoom reads window.scrollY on first paint,
+  // so a restored scroll position would leave it mid-animation.
+  if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
+  if (!location.hash) {
+    window.scrollTo(0, 0);
+    addEventListener('load', function () { if (!location.hash) window.scrollTo(0, 0); });
+  }
+
   /* ---------- header scroll state ---------- */
   var head = $('.site-head');
   function onScroll() { if (head) head.classList.toggle('scrolled', window.scrollY > 8); }
@@ -160,8 +169,16 @@
     document.addEventListener('mouseover', function (e) {
       var v = e.target.closest('[data-cursor="view"]');
       var l = e.target.closest('a,button,.work-row');
-      if (v) { dot.classList.add('ring'); lbl.textContent = v.getAttribute('data-cursor-label') || 'View'; }
-      else { dot.classList.remove('ring'); }
+      if (v) {
+        // data-cursor-icon="wave" swaps the label for the masked hand glyph;
+        // a bare "↗" label gets its own larger type scale.
+        var wave = v.getAttribute('data-cursor-icon') === 'wave';
+        var label = wave ? '' : (v.getAttribute('data-cursor-label') || 'View');
+        dot.classList.add('ring');
+        dot.classList.toggle('wave', wave);
+        dot.classList.toggle('arrow', label === '↗');
+        lbl.textContent = label;
+      } else { dot.classList.remove('ring'); dot.classList.remove('wave'); dot.classList.remove('arrow'); }
       dot.style.opacity = '1';
     });
     document.addEventListener('mouseout', function (e) { if (!e.relatedTarget) dot.style.opacity = '0'; });

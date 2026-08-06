@@ -1,0 +1,303 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Phone Plans page revamp - Zhenya Baranchik</title>
+<meta name="description" content="Phone Plans page revamp at Workiz - a static billing tab, turned into a page people actually use." />
+<link rel="stylesheet" href="site.css" />
+<style>
+  /* Custom elements are inline by default, which leaves a line-box gap below
+     the rounded image where the slot's grey backing peeks out. Block removes it. */
+  .figure image-slot{ display: block; }
+</style>
+</head>
+<body>
+<div class="reading-progress"></div>
+
+<!-- HEADER -->
+<header class="site-head">
+  <div class="bar">
+    <nav class="nav">
+      <a href="index.html#top">Home</a>
+      <a href="index.html#work">Work</a>
+      <a href="index.html#contact">Contact</a>
+      <a href="index.html#contact">About</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+<!-- OVERVIEW / HERO -->
+<section class="case-hero">
+  <div class="wrap">
+    <a href="index.html#work" class="case-back">←</a>
+    <div class="case-kicker reveal">
+      <span class="tag">Workiz</span>
+      <span class="tag">B2B SaaS</span>
+      <span class="tag">2024</span>
+    </div>
+    <h1 class="case-title reveal reveal-d1">Phone Plans page revamp</h1>
+    <p class="case-sub reveal reveal-d2">A static billing tab, turned into a page people actually use.</p>
+    <figure class="figure reveal reveal-d3" style="margin-top: clamp(30px,4.5vh,48px);">
+      <div class="cs-img case-hero-media clip in">
+        <image-slot style="aspect-ratio:2600/1888;" id="pp-hero" src="images/pp-hero.webp" shape="rounded" radius="20" placeholder="Workiz phone plan subscriptions page" aria-label="Workiz phone plan subscriptions page" fit="contain"></image-slot>
+      </div>
+    </figure>
+  </div>
+</section>
+
+<!-- AT A GLANCE -->
+<section class="wrap">
+  <dl class="glance reveal">
+    <div class="cell"><dt>Role</dt><dd>Product Designer</dd></div>
+    <div class="cell"><dt>Team</dt><dd>PM · 2 engineers · QA</dd></div>
+    <div class="cell"><dt>Timeframe</dt><dd>3 weeks</dd></div>
+    <div class="cell"><dt>Platform</dt><dd>Web</dd></div>
+  </dl>
+</section>
+
+<!-- 01 THE PROBLEM -->
+<section class="chapter">
+  <div class="wrap">
+    <div class="chapter-head reveal">
+      <span class="chapter-no">01</span>
+      <h2>The problem</h2>
+    </div>
+    <div class="prose indent reveal reveal-d1">
+      <p>Workiz sells a phone product inside the platform. Businesses get a number, make calls, send messages, and everything stays attached to the job.</p>
+      <p>The problem was that not enough customers used it.</p>
+      <p>The ones who bought a phone plan often stopped using it. Many did not understand what the phone actually gave them over the phone already in their pocket. And the page meant to manage all of this, the Phone Plans tab inside Subscription, was static. It did not show how many minutes or messages had been used. Nothing updated. A manager who opened it to answer a simple question, &ldquo;are we about to run out,&rdquo; could not find the answer.</p>
+      <p>So the page existed, but it did not do the two jobs a billing page has to do: tell me where I stand, and tell me what I can do about it.</p>
+    </div>
+    <figure class="figure media-row reveal">
+      <div class="cs-img">
+        <image-slot style="aspect-ratio:2600/1414;" id="pp-before" src="images/pp-before.webp" shape="rounded" radius="16" placeholder="Before state - the old static Phone Plans tab" aria-label="Before state - the old static Phone Plans tab" fit="contain"></image-slot>
+      </div>
+      <figcaption class="figcap">Before - the static Phone Plans tab</figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- 02 WHAT I FOUND -->
+<section class="chapter">
+  <div class="wrap">
+    <div class="chapter-head reveal">
+      <span class="chapter-no">02</span>
+      <h2>What I found</h2>
+    </div>
+    <div class="prose indent reveal reveal-d1">
+      <p>The revamp came to me from the PM as a roadmap item, and the PRD was thin. I had already seen this page failing before it was assigned, so I went and gathered evidence.</p>
+      <p>I used FullStory session recordings, support tickets, Amplitude, and the billing and phone pages of Housecall Pro and ServiceTitan for comparison.</p>
+      <p>Four things came out of it:</p>
+    </div>
+    <ul class="bullets reveal reveal-d1">
+      <li>Usage data existed but was presented as a flat block of numbers, with no sense of trend or remaining capacity.</li>
+      <li>The page showed everyone the same thing, whether they had never bought a phone plan or had been on on-demand billing for a year. Most people opened it and saw nothing relevant to them.</li>
+      <li>The explanation of what the phone product does lived in a set of inconsistent modals that were visually poor and led nowhere useful.</li>
+      <li>Nothing in the product asked people to upgrade at the moment they were most likely to say yes.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- 03 ONE PAGE, THREE USERS -->
+<section class="chapter">
+  <div class="wrap">
+    <div class="chapter-head reveal">
+      <span class="chapter-no">03</span>
+      <h2>One page, three users</h2>
+    </div>
+    <div class="prose indent reveal reveal-d1">
+      <p>The biggest structural decision was to stop designing one page and start designing three entry points into the same page.</p>
+    </div>
+    <div class="cols-3 reveal reveal-d1" style="margin-top: clamp(28px,4vh,44px);">
+      <div class="card">
+        <h3>No phone plan yet.</h3>
+        <p>The page leads with what the phone product does and why it is worth having, not with an empty usage chart.</p>
+      </div>
+      <div class="card">
+        <h3>Phone plan, on-demand off.</h3>
+        <p>The page leads with usage against the included limit, and offers on-demand as the answer to running out.</p>
+      </div>
+      <div class="card">
+        <h3>Phone plan, on-demand on.</h3>
+        <p>The page leads with current spend and the cap they set, because their question is not &ldquo;how much is left&rdquo; but &ldquo;how much am I spending.&rdquo;</p>
+      </div>
+    </div>
+    <div class="prose indent reveal" style="margin-top: clamp(28px,4vh,44px);">
+      <p>Same page. Different first thing you see. This is where most of the &ldquo;I opened it and it was not relevant to me&rdquo; problem went away.</p>
+    </div>
+    <figure class="figure media-row reveal">
+      <div class="cs-img">
+        <image-slot style="aspect-ratio:2600/2056;" id="pp-first-time-user" src="images/pp-first-time-user.webp" shape="rounded" radius="16" placeholder="Choose your Workiz Phone plan - first time user" aria-label="Choose your Workiz Phone plan - first time user" fit="contain"></image-slot>
+      </div>
+      <figcaption class="figcap">First time user</figcaption>
+    </figure>
+    <figure class="figure media-row reveal">
+      <div class="cs-img">
+        <image-slot style="aspect-ratio:2600/2056;" id="pp-on-demand" src="images/pp-on-demand.webp" shape="rounded" radius="16" placeholder="Phone plan on-demand usage and charges" aria-label="Phone plan on-demand usage and charges" fit="contain"></image-slot>
+      </div>
+      <figcaption class="figcap">Phone plans, on-demand user</figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- 04 MAKING USAGE READABLE -->
+<section class="chapter">
+  <div class="wrap">
+    <div class="chapter-head reveal">
+      <span class="chapter-no">04</span>
+      <h2>Making usage readable</h2>
+    </div>
+    <div class="prose indent reveal reveal-d1">
+      <p>The glance question is how much of the month is gone. The follow-up is why.</p>
+      <p>So the chart shows total minutes and messages used, with the on-demand portion broken out inside the same view. That split matters, because on-demand is the part that costs extra, and a manager needs to see it without doing arithmetic.</p>
+      <p>Month view is the default. Previous months are there for comparison, and a day-level view for when someone spots a spike and wants to know where it came from.</p>
+    </div>
+    <figure class="figure media-row reveal">
+      <div class="cs-img">
+        <image-slot style="aspect-ratio:2600/2058;" id="pp-usage-graph" src="images/pp-usage-graph.webp" shape="rounded" radius="16" placeholder="Monthly usage details with extended daily usage graph" aria-label="Monthly usage details with extended daily usage graph" fit="contain"></image-slot>
+      </div>
+    </figure>
+  </div>
+</section>
+
+<!-- 05 ON DEMAND, WITHOUT THE FEAR -->
+<section class="chapter">
+  <div class="wrap">
+    <div class="chapter-head reveal">
+      <span class="chapter-no">05</span>
+      <h2>On demand, without the fear</h2>
+    </div>
+    <div class="prose indent reveal reveal-d1">
+      <p>On-demand billing keeps the product working past your limit, and you pay for the overage. The design problem is that you are asking a business owner to switch on something that spends their money automatically.</p>
+      <p>So the moment the toggle goes on, the user sets the amount. Workiz cannot charge beyond it.</p>
+      <p>The warnings come in two steps. One when the balance is running low, so there is time to act. One when it is gone, so nothing fails silently. Both in-product, alongside the existing emails.</p>
+    </div>
+    <figure class="figure media-row reveal">
+      <div class="cs-img">
+        <image-slot style="aspect-ratio:2600/1315;" id="pp-ondemand-toggle" src="images/pp-ondemand-toggle.webp" shape="rounded" radius="16" placeholder="On-demand charges, off and on states" aria-label="On-demand charges, off and on states" fit="contain"></image-slot>
+      </div>
+    </figure>
+  </div>
+</section>
+
+<!-- 06 THE UPGRADE MOMENT -->
+<section class="chapter">
+  <div class="wrap">
+    <div class="chapter-head reveal">
+      <span class="chapter-no">06</span>
+      <h2>The upgrade moment</h2>
+    </div>
+    <div class="prose indent reveal reveal-d1">
+      <p>The old explanatory modals were inconsistent, visually weak, and did not link anywhere useful. I rebuilt them into a clear features section that explains what the phone product does and routes people to the right page.</p>
+      <p>Then I proposed offering the phone plan right after a user subscribes to the SaaS plan. There were doubts about the timing, but my read was that someone who just decided to buy is the best person to show their options to. A lot of Workiz features go unused simply because they are offered in the wrong place at the wrong time.</p>
+      <p>We agreed to test it rather than argue about it.</p>
+      <p>After launch, 9% of new SaaS subscribers moved to a phone plan within two weeks.</p>
+    </div>
+    <figure class="figure media-row reveal">
+      <div class="cs-img">
+        <image-slot style="aspect-ratio:2600/1403;" id="pp-upgrade-modal" src="images/pp-upgrade-modal.webp" shape="rounded" radius="16" placeholder="Upgrade modal with checkout and subscription activated panel" aria-label="Upgrade modal with checkout and subscription activated panel" fit="contain"></image-slot>
+      </div>
+      <figcaption class="figcap">Upgrade modal</figcaption>
+    </figure>
+    <figure class="figure media-row reveal">
+      <div class="cs-img">
+        <image-slot style="aspect-ratio:2600/1685;" id="pp-checkout" src="images/pp-checkout.webp" shape="rounded" radius="16" placeholder="Phone plan checkout panel" aria-label="Phone plan checkout panel" fit="contain"></image-slot>
+      </div>
+      <figcaption class="figcap">Checkout</figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- 07 OUTCOME -->
+<section class="chapter">
+  <div class="wrap">
+    <div class="chapter-head reveal">
+      <span class="chapter-no">07</span>
+      <h2>Outcome</h2>
+    </div>
+    <div class="prose indent reveal reveal-d1">
+      <p>Phone plan upgrades went up after launch, and the upgrade moment turned out to be the highest-leverage change in the project. It was also the smallest.</p>
+      <p>The page went from something people opened once and closed to something that answers their actual question, which is different depending on who they are.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 08 WHAT I WOULD DO DIFFERENTLY -->
+<section class="chapter">
+  <div class="wrap">
+    <div class="chapter-head reveal">
+      <span class="chapter-no">08</span>
+      <h2>What I would do differently</h2>
+    </div>
+    <div class="prose indent reveal reveal-d1">
+      <p>I would test the usage graph with real users before build.</p>
+      <p>I designed it from session recordings, support tickets, and competitor patterns, which was enough to make it clearly better than a static block of numbers. But &ldquo;clearly better&rdquo; is not the same as &ldquo;clear.&rdquo; I do not know whether a manager reads the on-demand split the way I intended, or whether the day-level view gets used at all. Half an hour with five customers would have told me.</p>
+    </div>
+  </div>
+</section>
+
+<!-- MORE WORK -->
+<section class="next-proj">
+  <div class="wrap">
+    <div class="np-label reveal">More work</div>
+    <div class="mw-grid three">
+      <div class="mw-card reveal" data-href="case-nowyouknow.html" data-cursor="view" data-cursor-label="↗">
+        <div class="cs-img mw-media">
+          <image-slot style="aspect-ratio:2600/1888;" src="assets/nyk-hero-new.webp" id="nyk-hero" shape="rounded" radius="16" placeholder="NowYouKnow - main image" fit="cover"></image-slot>
+        </div>
+        <div class="mw-row">
+          <div><a href="case-nowyouknow.html" class="mw-title">NowYouKnow</a></div>
+          <span class="mw-arrow">↗</span>
+        </div>
+      </div>
+      <div class="mw-card reveal reveal-d1" data-href="case-automation.html" data-cursor="view" data-cursor-label="↗">
+        <div class="cs-img mw-media">
+          <image-slot style="aspect-ratio:2600/1888;" src="assets/slot-auto-hero.webp" id="auto-hero" shape="rounded" radius="16" placeholder="Automation Revamp - main image" fit="contain"></image-slot>
+        </div>
+        <div class="mw-row">
+          <div><a href="case-automation.html" class="mw-title">Automation Revamp</a></div>
+          <span class="mw-arrow">↗</span>
+        </div>
+      </div>
+      <div class="mw-card reveal reveal-d2" data-href="case-equipment.html" data-cursor="view" data-cursor-label="↗">
+        <div class="cs-img mw-media">
+          <image-slot style="aspect-ratio:2600/1888;" src="assets/slot-equip-hero.webp" id="equip-hero" shape="rounded" radius="16" placeholder="Equipment Tracking - main image" fit="cover"></image-slot>
+        </div>
+        <div class="mw-row">
+          <div><a href="case-equipment.html" class="mw-title">Equipment Tracking</a></div>
+          <span class="mw-arrow">↗</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<!-- FOOTER -->
+<footer class="site-foot" id="contact">
+  <div class="wrap">
+    <p class="foot-cta reveal">Let&rsquo;s <span class="serif-i talk-gradient" style="font-weight: 600">talk</span>.<br/><a href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=zbaranchik@gmail.com" target="_blank" rel="noopener" data-magnetic="0.18">zbaranchik@gmail.com</a></p>
+    <div class="foot-grid">
+      <div class="foot-col"><span>Zhenya Baranchik (Tel Aviv)</span></div>
+      <div class="foot-col"><a href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=zbaranchik@gmail.com" target="_blank" rel="noopener">zbaranchik@gmail.com</a></div>
+      <div class="foot-col"><a href="tel:+972527330292">052 733 0292</a></div>
+      <div class="foot-col"><a href="https://www.linkedin.com/in/zhenya-baranchik-ba61b7147/" target="_blank" rel="noopener">LinkedIn ↗</a></div>
+    </div>
+  </div>
+</footer>
+
+<script src="image-slot.js"></script>
+<script src="site.js"></script>
+<script src="tweaks.js"></script>
+
+<template id="__bundler_thumbnail" data-bg-color="#FFFFFF">
+  <svg viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
+    <rect width="1200" height="800" fill="#FFFFFF"/>
+    <text x="600" y="400" text-anchor="middle" font-family="'Sora', Helvetica, Arial, sans-serif" font-size="96" font-weight="700" fill="#232323" letter-spacing="-3">Phone Plans</text>
+    <circle cx="600" cy="490" r="10" fill="#FF41AC"/>
+  </svg>
+</template>
+</body>
+</html>

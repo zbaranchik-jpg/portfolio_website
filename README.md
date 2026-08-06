@@ -1,6 +1,6 @@
 # Zhenya Baranchik — Portfolio Website
 
-Personal design portfolio. Four-page static site — no framework, no build step. Deploy directly from this repo.
+Personal design portfolio. Five-page static site — no framework, no build step. Deploy directly from this repo.
 
 **Live site:** deployed on Vercel from `main` branch.
 
@@ -10,10 +10,11 @@ Personal design portfolio. Four-page static site — no framework, no build step
 
 | File | URL path | What it is |
 |---|---|---|
-| `index.html` | `/` | Homepage — hero, work index, contact footer |
+| `index.html` | `/` | Homepage — split hero, work card grid, contact footer |
 | `case-nowyouknow.html` | `/case-nowyouknow.html` | NowYouKnow case study |
 | `case-automation.html` | `/case-automation.html` | Automation Revamp case study (Workiz) |
 | `case-equipment.html` | `/case-equipment.html` | Equipment Tracking case study (Workiz) |
+| `case-phone-plans.html` | `/case-phone-plans.html` | Phone Plans page revamp case study (Workiz) |
 
 ---
 
@@ -28,18 +29,21 @@ Redesign of Workiz's automation engine. Trigger → action + condition rule buil
 **Equipment Tracking** — B2B SaaS, Workiz  
 New feature that lets field-service businesses track installed equipment per client — serial numbers, warranties, service history, install locations. Desktop and mobile. Covers user research, personas, competitor analysis, flow design, and results.
 
+**Phone Plans page revamp** — B2B SaaS, Workiz
+A static billing tab turned into a page people actually use. One page with three entry points depending on whether the account has a phone plan and whether on-demand billing is on. Covers the readable usage graph, the on-demand spend cap, and the post-subscription upgrade moment (9% of new SaaS subscribers took a phone plan within two weeks).
+
 ---
 
 ## Design system
 
-- **Fonts:** Space Grotesk (headings, display, labels) · DM Sans (body text) — both loaded from Google Fonts
+- **Fonts:** Sora (headings, display, labels) · DM Sans (body text) — both loaded from Google Fonts
 - **Colors:**
-  - `#EA3A12` — red-orange, expression (accent words, numbers, brand dot, cursor)
+  - `#FF41AC` — pink, expression (accent words, numbers, cursor)
   - `#1F50E6` — blue, action (CTAs, links, nav underlines, arrows)
   - `#FFC01F` — yellow, highlight (marker behind key words)
   - `#FFFFFF` — white canvas background
   - `#1B242C` — dark footer
-- **Motion:** scroll reveals, clip-wipe on media, custom coral cursor, page-transition veil, reading-progress bar, count-up metrics, magnetic email link
+- **Motion:** scroll reveals, clip-wipe on media, custom cursor (label / arrow / waving-hand variants), WebGL mesh warp on the hero portrait, scroll-linked portrait zoom, page-transition veil, reading-progress bar, count-up metrics, magnetic email link
 
 ---
 
@@ -51,15 +55,22 @@ New feature that lets field-service businesses track installed equipment per cli
 ├── case-nowyouknow.html     # Case study 1
 ├── case-automation.html     # Case study 2
 ├── case-equipment.html      # Case study 3
+├── case-phone-plans.html    # Case study 4
 ├── site.css                 # Shared styles (all pages)
 ├── site.js                  # Shared interactions (all pages)
 ├── image-slot.js            # <image-slot> custom element
+├── portrait-warp.js         # WebGL mesh warp on the hero portrait (homepage)
+├── tweaks.js                # Live theme panel (accent / density)
 ├── assets/
-│   └── portrait.jpeg        # Hero spotlight photo (homepage)
+│   ├── portrait.jpeg        # Legacy hero spotlight photo
+│   └── nyk-hero-new.webp    # NowYouKnow hero
 └── images/
-    ├── nyk-*.webp           # NowYouKnow case study images
-    ├── auto-*.webp          # Automation Revamp images
-    └── equip-*.webp         # Equipment Tracking images
+    ├── portrait-halftone.webp  # Hero portrait (homepage)
+    ├── cursor-hand.png         # Waving-hand cursor glyph (CSS mask)
+    ├── nyk-*.webp              # NowYouKnow case study images
+    ├── auto-*.webp             # Automation Revamp images
+    ├── equip-*.webp            # Equipment Tracking images
+    └── pp-*.webp               # Phone Plans images
 ```
 
 ---
@@ -104,7 +115,7 @@ Once secrets are configured, pushes to `main` will trigger the Vercel deploy wor
 
 ## Updating content
 
-All content is in the HTML files — no CMS, no templating. Each page is self-contained except for the three shared files (`site.css`, `site.js`, `image-slot.js`).
+All content is in the HTML files — no CMS, no templating. Each page is self-contained except for the shared files (`site.css`, `site.js`, `image-slot.js`, `tweaks.js`).
 
 To swap an image, replace the corresponding file in `images/` keeping the same filename, then push.
 
