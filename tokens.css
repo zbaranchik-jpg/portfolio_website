@@ -1,0 +1,113 @@
+/* ============================================================
+   Portfolio V1 — design tokens
+   Source: Figma FNNpyyW00gtu29EVoVgPDG, node 96:13534 (see BRIEF.md)
+   Measured values in the first block; the compatibility block at the
+   bottom maps the older token names (used by the case-study pages)
+   onto this layer so one system drives every page.
+   ============================================================ */
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;500&family=DM+Sans:opsz,wght@9..40,300..600&display=swap');
+
+:root{
+  /* ---- Colour ------------------------------------------- */
+  --bg:            #FFFFFF;                    /* figma: color/bg */
+  --ink:           #232323;
+  --muted:         #6D6D6D;                    /* lead paragraph ONLY */
+  --accent:        #FF41AC;
+  --foot-bg:       #1B242C;                    /* figma: color/foot-bg */
+  --bg-soft:       #FAF8F4;                    /* figma: color/bg-soft */
+  --line-invert:   rgba(250,248,244,0.16);     /* figma: color/line-invert */
+  --on-foot-strong:#FFFFFF;                    /* footer email only */
+  --chip-fill:     rgba(255,255,255,0.10);
+  /* Kept for reference — Zhenya's call was to ship #FF41AC as drawn.
+     #FFF on --accent = 3.18:1, #FFF on --accent-text = 4.81:1. BRIEF §7.6 */
+  --accent-text:   #D61C86;
+
+  /* ---- Type --------------------------------------------- */
+  --font-mono:  "DM Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+  --font-sans:  "DM Sans", ui-sans-serif, system-ui, -apple-system, sans-serif;
+
+  --fs-logo:      18px;
+  --fs-nav:       14px;
+  --fs-h1-a:      clamp(22px, 2.222vw, 32px);
+  --fs-h1-b:      clamp(38px, 4.444vw, 64px);
+  --fs-lead:      clamp(17px, 1.389vw, 20px);
+  --fs-button:    16px;
+  --fs-card-t:    clamp(14px, 1.111vw, 16px);
+  --fs-card-y:    clamp(12px, 0.972vw, 14px);
+  --fs-foot-a:    clamp(22px, 2.222vw, 32px);
+  --fs-foot-b:    clamp(24px, 3.333vw, 48px);
+  --fs-foot-meta: clamp(14px, 1.111vw, 16px);
+
+  --lh-tight: 1.05;
+  --lh-snug:  0.98;
+  --lh-prose: 1.5;
+
+  --tr-h1-a:  -0.02em;
+  --tr-h1-b:  -0.025em;
+  --tr-card:  -0.02em;
+  --tr-email: -0.01em;
+
+  /* ---- Geometry ----------------------------------------- */
+  --r-card:   24px;
+  --r-button: 90px;
+  --r-pill:   100px;
+  --stroke-portrait: 2.017px;
+
+  /* Two margins, on purpose: chrome runs wider than content. */
+  --inset-chrome:  clamp(24px,  4.444vw,  64px);
+  --inset-content: clamp(24px, 11.111vw, 160px);
+
+  --page-max: 1440px;
+  --card-ratio: 530 / 354;
+
+  /* ---- Spacing (as measured; not a clean 8pt scale) ------ */
+  --sp-8:8px; --sp-16:16px; --sp-20:20px; --sp-24:24px;
+  --sp-32:32px; --sp-38:38px; --sp-40:40px; --sp-54:54px;
+  --sp-60:60px; --sp-81:81px;
+
+  --gap-header-hero: clamp(48px,  6.111vw,  88px);
+  --gap-hero-work:   clamp(64px,  8.611vw, 124px);
+  --gap-work-foot:   clamp(80px, 11.597vw, 167px);
+
+  /* ---- Motion ------------------------------------------- */
+  --ease-out-quint: cubic-bezier(0.22, 1, 0.36, 1);
+  --dur-reveal: 400ms;
+  --dur-fade:   200ms;
+  --dur-ui:     160ms;
+
+  /* ---- Compatibility layer -----------------------------------
+     Older names still referenced by site.css and the case-study
+     pages. Mapped, not redefined, so those pages inherit this
+     palette and type instead of running a second system. */
+  --display: var(--font-mono);
+  --serif:   var(--font-sans);
+  --sans:    var(--font-sans);
+  --mono:    var(--font-mono);
+
+  --bg-deep:  #F4F2EE;
+  --paper:    #FBFAF8;
+  --bg-ink:   var(--foot-bg);
+  --ink-soft: var(--muted);
+  --ink-faint:#9A9A9A;
+
+  --accent-deep: #E01B8E;
+  --accent-tint: #FFD8EC;
+  --blue:        var(--accent);
+  --blue-deep:   var(--accent-deep);
+
+  --line:      rgba(35,35,35,0.12);
+  --line-soft: rgba(35,35,35,0.07);
+
+  --ease:     var(--ease-out-quint);
+  --ease-out: cubic-bezier(.16,1,.3,1);
+  --pad:      var(--inset-chrome);
+}
+
+@media (prefers-reduced-motion: reduce){
+  :root{ --dur-reveal:0ms; --dur-fade:0ms; --dur-ui:0ms; }
+}
+
+*{ box-sizing:border-box; }
+
+/* shared label / eyebrow */
+.eyebrow{ font-family:var(--font-mono); font-size:11px; letter-spacing:.16em; text-transform:uppercase; color:var(--muted); }
