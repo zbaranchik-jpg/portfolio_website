@@ -19,8 +19,7 @@ body{
   font-weight:400; overflow-x:hidden;
 }
 a{ color:inherit; text-decoration:none; }
-img{ max-width:100%; width:auto; height:auto; display:block; }
-image-slot{ display:block; width:100%; max-width:100%; min-width:0; height:auto; }
+img{ max-width:100%; display:block; }
 ::selection{ background:var(--accent); color:#fff; }
 
 /* custom cursor: hide native on fine pointers when enabled */
@@ -148,7 +147,7 @@ body.has-cursor a, body.has-cursor button, body.has-cursor .work-row{ cursor:non
 .case-title{ font-family:var(--display); font-weight:700; letter-spacing:-0.03em; line-height:1.034;
   font-size:clamp(44px,8vw,118px); margin:0; }
 .case-sub{ max-width:60ch; font-family:var(--font-sans); font-weight:400; font-size:clamp(18px,1.7vw,23px); line-height:1.5; color:var(--ink); margin:16px 0 0; }
-.case-hero-media{ width:100%; display:block; margin-top:clamp(36px,6vh,64px); }
+.case-hero-media{ width:100%; height:clamp(280px,46vw,640px); margin-top:clamp(36px,6vh,64px); }
 
 /* at a glance bar */
 .glance{ display:grid; grid-template-columns:repeat(4,1fr); gap:1px; background:var(--line);
@@ -196,15 +195,14 @@ body.has-cursor a, body.has-cursor button, body.has-cursor .work-row{ cursor:non
 .media{ width:100%; }
 .media[radius]{ overflow:hidden; border-radius:16px; }
 .media[radius] img{ display:block; border-radius:inherit; }
+.media.tall{ height:clamp(300px,40vw,560px); }
+.media.mid{ height:clamp(240px,30vw,420px); }
+.media.wide{ height:clamp(260px,34vw,480px); }
 .figure{ margin:0; }
 /* bare image elements used as content media: natural ratio + the same corner
    radius image-slot applies, so the two can sit side by side in a figure */
 img.media, img.media.wide, img.media.tall, img.media.mid{ height:auto; border-radius:16px; }
 img.case-hero-media{ height:auto; border-radius:20px; }
-/* image block: image-slot carries its own aspect-ratio inline style and sizes itself */
-.cs-img{ display:block; width:100%; }
-.cs-img > image-slot,
-.cs-img > img{ display:block; width:100%; height:auto; }
 .figcap{ font-family:var(--mono); font-size:11px; letter-spacing:.06em; color:var(--ink-faint); margin-top:12px; text-transform:uppercase; }
 
 /* comparison table */

@@ -260,4 +260,37 @@
   window.addEventListener('pageshow', function (e) {
     if (e.persisted) { veil.style.transition = 'none'; veil.style.transform = 'translateY(-100%)'; }
   });
+
+  /* ---------- auto-fit content images to their true aspect ratio ---------- */
+  // Every content image (.figure image-slot) sizes its box to the image's own
+  // natural ratio, so nothing is cropped and no grey backing shows below the
+  // rounded corner. This is what resolves the fixed heights the media classes
+  // carry. Personas (.avatar) and work-card thumbs (.mw-media) are not .figure,
+  // so they keep their fixed frames.
+  function fitSlot(slot) {
+    var sr = slot.shadowRoot;
+    if (!sr) return;
+    var img = sr.querySelector('img');
+    if (!img) return;
+    if (slot._fitBound) return;
+    slot._fitBound = true;
+    var apply = function () {
+      if (img.naturalWidth && img.naturalHeight) {
+        slot.style.display = 'block';
+        slot.style.width = '100%';
+        slot.style.height = 'auto';
+        slot.style.aspectRatio = img.naturalWidth + ' / ' + img.naturalHeight;
+      }
+    };
+    img.addEventListener('load', apply);
+    apply();
+  }
+  function scanFits() { $$('.figure image-slot').forEach(fitSlot); }
+  scanFits();
+  // the shadow <img> may not exist on the first tick — retry briefly, then stop
+  var fitTries = 0;
+  var fitTimer = setInterval(function () {
+    scanFits();
+    if (++fitTries > 20) clearInterval(fitTimer);
+  }, 150);
 })();
