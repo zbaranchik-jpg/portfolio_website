@@ -4,84 +4,114 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Zhenya Baranchik — Product Designer</title>
-<meta name="description" content="Zhenya Baranchik — Product Designer in Tel Aviv. Simplifying complex B2B2C SaaS platforms and crafting intuitive mobile apps." />
-<link rel="stylesheet" href="site.css" />
+<meta name="description" content="Zhenya Baranchik — Senior Product Designer in Tel Aviv. B2B SaaS and consumer mobile products people come back to." />
+<link rel="stylesheet" href="tokens.css" />
+<link rel="stylesheet" href="home.css" />
 </head>
 <body>
 
-<!-- ░░ HEADER ░░ -->
 <header class="site-head">
-  <div class="bar">
-    <nav class="nav">
-      <a href="#top">Home</a>
-      <a href="#work">Work</a>
-      <a href="#contact">Contact</a>
+  <span class="head-bg" aria-hidden="true"></span>
+  <div class="head-in page">
+    <a class="logo" href="index.html" aria-label="Zhenya Baranchik — home">zb</a>
+    <nav class="nav" aria-label="Primary">
+      <a class="navlink" href="#work"><span class="flip"><span class="flip-a">Work</span><span class="flip-b" aria-hidden="true">Work</span></span></a>
+      <a class="navlink" href="about.html"><span class="flip"><span class="flip-a">About</span><span class="flip-b" aria-hidden="true">About</span></span></a>
+      <a class="navlink" href="#contact"><span class="flip"><span class="flip-a">Contact</span><span class="flip-b" aria-hidden="true">Contact</span></span></a>
+      <a class="navlink" href="assets/Zhenya_Baranchik_CV_2026.pdf" target="_blank" rel="noopener" download><span class="flip"><span class="flip-a">CV</span><span class="flip-b" aria-hidden="true">CV</span></span></a>
     </nav>
+    <details class="navmenu">
+      <summary>Menu</summary>
+      <div class="navmenu-panel">
+        <a class="navlink" href="#work">Work</a>
+        <a class="navlink" href="about.html">About</a>
+        <a class="navlink" href="#contact">Contact</a>
+        <a class="navlink" href="assets/Zhenya_Baranchik_CV_2026.pdf" target="_blank" rel="noopener" download>CV</a>
+      </div>
+    </details>
   </div>
 </header>
 
-<!-- ░░ HERO ░░ -->
-<section class="hero hero-split" id="top">
-  <div class="wrap">
-    <div class="hs">
-      <span class="hs-name reveal">Zhenya Baranchik</span>
-      <h1 class="hs-word hs-word-l reveal">Product</h1>
-      <div class="hs-mid reveal reveal-d1">
-        <div class="hs-portrait" data-cursor="view" data-cursor-icon="wave" data-cursor-label=""><img src="images/portrait-halftone.webp" alt="Zhenya Baranchik" /></div>
+<main>
+  <section class="hero page">
+    <div class="hero-text">
+      <div class="hero-lines">
+        <h1 class="h1 reveal">
+          <span class="h1-a">Hi, I&rsquo;m Zhenya Baranchik</span>
+          <span class="h1-b">Product Designer</span>
+        </h1>
+        <p class="lead reveal reveal-d1">Senior Product Designer based in Tel Aviv. I enjoy creating products that do more than look good: they help people understand how things work and what to do next.</p>
       </div>
-      <span class="hs-word hs-word-r reveal reveal-d2">Designer</span>
-      <p class="hs-lead reveal reveal-d2">I&rsquo;m a Senior Product Designer based in Tel Aviv with 6 years of experience building B2B/B2C SaaS and mobile apps people come back to</p>
+      <div class="btn-row reveal reveal-d2">
+        <a class="btn btn-primary" href="assets/Zhenya_Baranchik_CV_2026.pdf" target="_blank" rel="noopener" download>Download CV</a>
+        <a class="btn btn-secondary" href="https://www.linkedin.com/in/zhenyabaranchik/" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
     </div>
-    <div class="hs-cue"><a href="#work" class="scroll-cue reveal reveal-d3" aria-label="Scroll down"><span class="line"></span></a></div>
-  </div>
-</section>
-
-<!-- ░░ WORK ░░ -->
-<section class="work" id="work" style="margin: 0px 0px 148px">
-  <div class="wrap">
-    <div class="sec-head reveal" style="border-width: 0px">
-      <span class="label">Selected work</span>
-      <span class="count">(04)</span>
+    <div class="portrait reveal reveal-d1" data-cursor="view" data-cursor-icon="wave" data-cursor-label="">
+      <img src="images/portrait-halftone.webp" alt="Zhenya Baranchik" />
     </div>
-    <div class="work-grid">
+  </section>
 
-      <a class="fb reveal" data-cursor="view" data-cursor-label="↗" href="case-nowyouknow.html">
-        <span class="fb-top"><span>Consumer app</span></span>
-        <img src="assets/nyk-hero-new.webp" alt="NowYouKnow app screens" />
-        <span class="fb-body"><h3 class="fb-title">NowYouKnow</h3><span class="fb-meta"><span>iOS · Android · Web</span><span>2025</span></span></span>
+  <section class="work page" id="work">
+    <h2 class="vh">Selected work</h2>
+    <div class="grid">
+      <a class="wcard reveal" href="case-nowyouknow.html" data-cursor="view" data-cursor-label="↗">
+        <span class="thumb"><img src="images/card-nyk.webp" alt="Now You Know — app screens" /></span>
+        <span class="wmeta">
+          <span class="wtitle-wrap">
+            <h3 class="wtitle">Now You Know / 0-to-1</h3>
+            <span class="wyear">2026</span>
+          </span>
+          <span class="pill" aria-hidden="true"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 14 14 6" /><path d="M7.5 6H14v6.5" /></svg></span>
+        </span>
       </a>
 
-      <a class="fb reveal reveal-d1" data-cursor="view" data-cursor-label="↗" href="case-automation.html">
-        <span class="fb-top"><span>Workiz · B2B SaaS</span></span>
-        <img src="images/auto-hero.webp" alt="Workiz automation builder" />
-        <span class="fb-body"><h3 class="fb-title">Automation Revamp</h3><span class="fb-meta"><span>Web app</span><span>2024</span></span></span>
+      <a class="wcard reveal reveal-d1" href="case-automation.html" data-cursor="view" data-cursor-label="↗">
+        <span class="thumb"><img src="images/card-automation.webp" alt="Workiz Automation Center — builder screen" /></span>
+        <span class="wmeta">
+          <span class="wtitle-wrap">
+            <h3 class="wtitle">Workiz / Automation Center</h3>
+            <span class="wyear">2024</span>
+          </span>
+          <span class="pill" aria-hidden="true"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 14 14 6" /><path d="M7.5 6H14v6.5" /></svg></span>
+        </span>
       </a>
 
-      <a class="fb reveal reveal-d2" data-cursor="view" data-cursor-label="↗" href="case-equipment.html">
-        <span class="fb-top"><span>Workiz · B2B SaaS</span></span>
-        <img src="images/equip-hero.webp" alt="Equipment tracking screens" />
-        <span class="fb-body"><h3 class="fb-title">Equipment Tracking</h3><span class="fb-meta"><span>Web · Mobile</span><span>2024</span></span></span>
+      <a class="wcard reveal reveal-d2" href="case-equipment.html" data-cursor="view" data-cursor-label="↗">
+        <span class="thumb"><img src="images/card-equipment.webp" alt="Workiz Equipment Tracking — desktop and mobile" /></span>
+        <span class="wmeta">
+          <span class="wtitle-wrap">
+            <h3 class="wtitle">Workiz / Equipment Tracking</h3>
+            <span class="wyear">2022&ndash;2023</span>
+          </span>
+          <span class="pill" aria-hidden="true"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 14 14 6" /><path d="M7.5 6H14v6.5" /></svg></span>
+        </span>
       </a>
 
-      <a class="fb reveal reveal-d3" data-cursor="view" data-cursor-label="↗" href="case-phone-plans.html">
-        <span class="fb-top"><span>Workiz · B2B SaaS</span></span>
-        <img src="images/pp-hero.webp" alt="Workiz phone plans subscription page" />
-        <span class="fb-body"><h3 class="fb-title">Phone Plans page revamp</h3><span class="fb-meta"><span>Web app</span><span>2024</span></span></span>
+      <a class="wcard reveal reveal-d3" href="case-phone-plans.html" data-cursor="view" data-cursor-label="↗">
+        <span class="thumb"><img src="images/card-phone-plans.webp" alt="Workiz Phone Plans — subscription page" /></span>
+        <span class="wmeta">
+          <span class="wtitle-wrap">
+            <h3 class="wtitle">Workiz / Phone Plans</h3>
+            <span class="wyear">2024</span>
+          </span>
+          <span class="pill" aria-hidden="true"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 14 14 6" /><path d="M7.5 6H14v6.5" /></svg></span>
+        </span>
       </a>
-
     </div>
-  </div>
-</section>
+  </section>
+</main>
 
-<!-- ░░ FOOTER / CONTACT ░░ -->
 <footer class="site-foot" id="contact">
-  <div class="wrap">
-    <p class="foot-cta reveal">Let&rsquo;s <span class="serif-i talk-gradient" style="font-weight: 600">talk</span>.<br/><a href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=zbaranchik@gmail.com" target="_blank" rel="noopener" data-magnetic="0.18">zbaranchik@gmail.com</a></p>
-    <div class="foot-grid">
-      <div class="foot-col"><span>Zhenya Baranchik (Tel Aviv)</span></div>
-      <div class="foot-col"><a href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=zbaranchik@gmail.com" target="_blank" rel="noopener">zbaranchik@gmail.com</a></div>
-      <div class="foot-col"><a href="tel:+972527330292">052 733 0292</a></div>
-      <div class="foot-col"><a href="https://www.linkedin.com/in/zhenya-baranchik-ba61b7147/" target="_blank" rel="noopener">LinkedIn ↗</a></div>
+  <div class="foot-in page">
+    <div class="foot-cta">
+      <span class="foot-hi">Let&rsquo;s talk</span>
+      <a class="foot-mail" href="mailto:zbaranchik@gmail.com"><span class="flip"><span class="flip-a">zbaranchik@gmail.com</span><span class="flip-b" aria-hidden="true">zbaranchik@gmail.com</span></span></a>
+    </div>
+    <div class="foot-meta">
+      <span>Zhenya Baranchik (Tel Aviv)</span>
+      <span>052 733 0292</span>
+      <a href="https://www.linkedin.com/in/zhenyabaranchik/" target="_blank" rel="noopener"><span class="flip"><span class="flip-a">LinkedIn ↗</span><span class="flip-b" aria-hidden="true">LinkedIn ↗</span></span></a>
     </div>
   </div>
 </footer>
@@ -89,36 +119,22 @@
 <script>
   // portrait: scroll-linked zoom (halftone dots grow) + drift up, clipped by the frame
   (function(){
-    var img=document.querySelector('.hs-portrait'); if(!img) return;
+    var el=document.querySelector('.portrait'); if(!el) return;
     if(matchMedia('(prefers-reduced-motion:reduce)').matches) return;
     var cur=0,target=0,raf=null;
-    function read(){var d=Math.max(window.innerHeight*.85,1);target=Math.min(1,Math.max(0,window.scrollY/d));loop();}
     function loop(){
       cur+=(target-cur)*.12;
       if(Math.abs(target-cur)<.0005){cur=target;raf=null;}else{raf=requestAnimationFrame(loop);}
       var e=cur*cur*(3-2*cur);
-      img.style.setProperty('--pz',(1.06+e*2.4).toFixed(4));
-      img.style.setProperty('--pp',e.toFixed(4));
+      el.style.setProperty('--pz',(1.06+e*2.4).toFixed(4));
+      el.style.setProperty('--pp',e.toFixed(4));
     }
-    addEventListener('scroll',function(){var d=Math.max(window.innerHeight*.85,1);target=Math.min(1,Math.max(0,window.scrollY/d));if(!raf)raf=requestAnimationFrame(loop);},{passive:true});
+    function read(){var d=Math.max(window.innerHeight*.85,1);target=Math.min(1,Math.max(0,window.scrollY/d));if(!raf)raf=requestAnimationFrame(loop);}
+    addEventListener('scroll',read,{passive:true});
     addEventListener('resize',read,{passive:true}); read();
   })();
 </script>
 <script src="portrait-warp.js"></script>
-<script src="image-slot.js"></script>
 <script src="site.js"></script>
-<script src="tweaks.js"></script>
-
-<template id="__bundler_thumbnail" data-bg-color="#FFFFFF">
-  <svg viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
-    <rect width="1200" height="800" fill="#FFFFFF"/>
-    <text x="120" y="380" font-family="'Sora', Helvetica, Arial, sans-serif" font-size="120" font-weight="700" fill="#232323" letter-spacing="-5">Product</text>
-    <text x="120" y="510" font-family="'Sora', Helvetica, Arial, sans-serif" font-size="120" font-weight="700" fill="#FF41AC" letter-spacing="-5">Designer</text>
-  </svg>
-</template>
 </body>
 </html>
-
-<style id="__om-edit-overrides">
-:is(h1,h2,h3,h4,h5,h6) >:is(h1,h2,h3,h4,h5,h6,p,li,dt,dd,blockquote,figcaption,label,span,a,em,strong,small,td,th,caption) >.accent { font-weight: 600 !important }
-</style>

@@ -2,7 +2,7 @@
    A WebGL grid whose vertices are pulled toward the pointer with a gaussian
    falloff, released with a spring. Falls back to the plain <img> silently. */
 (function () {
-  var host = document.querySelector('.hs-portrait');
+  var host = document.querySelector('.portrait') || document.querySelector('.hs-portrait');
   if (!host) return;
   var img = host.querySelector('img');
   if (!img) return;

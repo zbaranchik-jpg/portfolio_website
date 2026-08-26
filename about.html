@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>About — Zhenya Baranchik</title>
+<meta name="description" content="About Zhenya Baranchik — Senior Product Designer in Tel Aviv, six years across B2B SaaS and consumer mobile." />
+<link rel="stylesheet" href="tokens.css" />
+<link rel="stylesheet" href="home.css" />
+</head>
+<body>
+
+<header class="site-head">
+  <span class="head-bg" aria-hidden="true"></span>
+  <div class="head-in page">
+    <a class="logo" href="index.html" aria-label="Zhenya Baranchik — home">zb</a>
+    <nav class="nav" aria-label="Primary">
+      <a class="navlink" href="index.html#work"><span class="flip"><span class="flip-a">Work</span><span class="flip-b" aria-hidden="true">Work</span></span></a>
+      <a class="navlink" href="about.html" aria-current="page"><span class="flip"><span class="flip-a">About</span><span class="flip-b" aria-hidden="true">About</span></span></a>
+      <a class="navlink" href="index.html#contact"><span class="flip"><span class="flip-a">Contact</span><span class="flip-b" aria-hidden="true">Contact</span></span></a>
+      <a class="navlink" href="assets/Zhenya_Baranchik_CV_2026.pdf" target="_blank" rel="noopener" download><span class="flip"><span class="flip-a">CV</span><span class="flip-b" aria-hidden="true">CV</span></span></a>
+    </nav>
+    <details class="navmenu">
+      <summary>Menu</summary>
+      <div class="navmenu-panel">
+        <a class="navlink" href="index.html#work">Work</a>
+        <a class="navlink" href="about.html" aria-current="page">About</a>
+        <a class="navlink" href="index.html#contact">Contact</a>
+        <a class="navlink" href="assets/Zhenya_Baranchik_CV_2026.pdf" target="_blank" rel="noopener" download>CV</a>
+      </div>
+    </details>
+  </div>
+</header>
+
+<main>
+  <section class="about-hero page">
+    <div class="hero-text">
+      <div class="hero-lines">
+        <h1 class="h1 reveal">
+          <span class="h1-b">About</span>
+        </h1>
+        <p class="lead reveal reveal-d1">As a kid, I wanted to be a hockey player. That didn&rsquo;t happen, so I became a designer instead.</p>
+      </div>
+      <div class="prose reveal reveal-d2">
+        <p>I&rsquo;ve always been pulled toward beauty, the kind of order in things that just feels right. That pull took me from industrial design to graphic design before landing on product design, where it finally clicked, the same eye for beauty, but now with the logic and structure to make it actually work.</p>
+        <p>Six years in, across B2B SaaS and consumer mobile, and I still love it. Right now I&rsquo;m deep in folding AI into my process, not to skip the thinking, just to move faster through it.</p>
+        <p><strong>What I&rsquo;ve learned along the way: most things are possible if you keep going, stay consistent, and always know your next step.</strong></p>
+      </div>
+    </div>
+    <figure class="about-photo reveal reveal-d1">
+      <image-slot id="about-photo" src="images/about-photo.webp" style="aspect-ratio:331/588;" fit="contain" shape="rounded" radius="24" placeholder="A photo of me — not the halftone" aria-label="Zhenya Baranchik as a hockey player"></image-slot>
+      <figcaption class="photo-cap">It&rsquo;s only AI :(</figcaption>
+    </figure>
+  </section>
+
+  </main>
+
+<footer class="site-foot" id="contact">
+  <div class="foot-in page">
+    <div class="foot-cta">
+      <span class="foot-hi">Let&rsquo;s talk</span>
+      <a class="foot-mail" href="mailto:zbaranchik@gmail.com"><span class="flip"><span class="flip-a">zbaranchik@gmail.com</span><span class="flip-b" aria-hidden="true">zbaranchik@gmail.com</span></span></a>
+    </div>
+    <div class="foot-meta">
+      <span>Zhenya Baranchik (Tel Aviv)</span>
+      <span>052 733 0292</span>
+      <a href="https://www.linkedin.com/in/zhenyabaranchik/" target="_blank" rel="noopener"><span class="flip"><span class="flip-a">LinkedIn ↗</span><span class="flip-b" aria-hidden="true">LinkedIn ↗</span></span></a>
+    </div>
+  </div>
+</footer>
+
+<script src="image-slot.js"></script>
+<script>
+  // The photo frame hugs whatever gets dropped in: read the filled image's
+  // natural ratio and drive the box with it, so nothing is ever cropped.
+  (function(){
+    var wrap=document.querySelector('.about-photo'),slot=document.getElementById('about-photo');
+    if(!wrap||!slot) return;
+    function apply(){
+      var img=slot.shadowRoot&&slot.shadowRoot.querySelector('img');
+      if(!img||!img.naturalWidth) return false;
+      wrap.style.setProperty('--photo-ratio',img.naturalWidth+' / '+img.naturalHeight);
+      return true;
+    }
+    function attempt(n){ if(apply()||n>40) return; setTimeout(function(){attempt(n+1)},120); }
+    attempt(0);
+    new MutationObserver(function(){ if(slot.hasAttribute('data-filled')) attempt(0); else wrap.style.removeProperty('--photo-ratio'); })
+      .observe(slot,{attributes:true,attributeFilter:['data-filled','src']});
+  })();
+</script>
+<script src="site.js"></script>
+</body>
+</html>
