@@ -23,6 +23,23 @@
   function onScroll() { if (head) head.classList.toggle('scrolled', window.scrollY > 8); }
   window.addEventListener('scroll', onScroll, { passive: true }); onScroll();
 
+  /* ---------- progressive header blur ---------- */
+  // A single backdrop-filter is uniform; the Figma spec ramps the blur from 6px
+  // at the top to 0 at the bottom edge. Stacking 8 top-anchored strips of
+  // decreasing height makes their blurs accumulate upward, and the mask on each
+  // keeps the seams invisible.
+  var hbg = head && head.querySelector('.head-bg');
+  if (hbg && !hbg.children.length) {
+    for (var hi = 0, HN = 8; hi < HN; hi++) {
+      var hl = document.createElement('i');
+      hl.className = 'hb-l';
+      hl.style.height = ((1 - hi / HN) * 100).toFixed(1) + '%';
+      hl.style.webkitBackdropFilter = hl.style.backdropFilter = 'blur(2px)';
+      hl.style.webkitMaskImage = hl.style.maskImage = 'linear-gradient(to bottom,#000 0,#000 40%,transparent 100%)';
+      hbg.appendChild(hl);
+    }
+  }
+
   /* ---------- scroll reveals ---------- */
   var revealEls = $$('.reveal, .clip');
   if ('IntersectionObserver' in window && !reduce) {
@@ -178,7 +195,7 @@
         dot.classList.toggle('wave', wave);
         dot.classList.toggle('arrow', label === '↗');
         lbl.textContent = label;
-      } else { dot.classList.remove('ring'); dot.classList.remove('wave'); dot.classList.remove('arrow'); }
+      } else { dot.classList.remove('ring'); dot.classList.remove('wave'); dot.classList.remove('arrow'); lbl.textContent = ''; }
       dot.style.opacity = '1';
     });
     document.addEventListener('mouseout', function (e) { if (!e.relatedTarget) dot.style.opacity = '0'; });
