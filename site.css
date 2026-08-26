@@ -165,8 +165,8 @@ body.has-cursor a, body.has-cursor button, body.has-cursor .work-row{ cursor:non
 .plus-line{ display:inline-flex; align-items:baseline; gap:.18em; }
 .plus-line .serif-i{ position:relative; top:4px; }
 .chapter-no{ display:block; font-family:var(--mono); font-size:12px; letter-spacing:.14em; text-transform:uppercase; color:var(--accent); margin-bottom:clamp(14px,1.8vh,20px); }
-.chapter h2{ font-family:var(--display); font-weight:600; letter-spacing:-0.025em; line-height:1.3;
-  font-size:clamp(28px,4vw,54px); margin:0; max-width:20ch; }
+.chapter h2{ font-family:var(--display); font-weight:600; letter-spacing:-0.025em; line-height:50px;
+  font-size:40px; margin:0; max-width:20ch; }
 .chapter h2 .serif-i{ letter-spacing:0; }
 .prose{ max-width:62ch; }
 .prose.indent{ margin-left:0; }
@@ -232,8 +232,8 @@ img.case-hero-media{ height:auto; border-radius:20px; }
 
 /* editorial bullet list */
 .bullets{ list-style:none; margin:0; padding:0; max-width:66ch; }
-.bullets li{ position:relative; padding:17px 0 17px 32px; border-top:1px solid var(--line); font-size:clamp(15.5px,1.35vw,18px); line-height:1.55; color:var(--ink); }
-.bullets li:last-child{ border-bottom:1px solid var(--line); }
+.bullets li{ position:relative; padding:17px 0 17px 32px; font-size:clamp(15.5px,1.35vw,18px); line-height:1.55; color:var(--ink); }
+.bullets li + li{ border-top:1px solid var(--line); }
 .bullets li::before{ content:''; position:absolute; left:3px; top:25px; width:8px; height:8px; border-radius:50%; background:var(--accent); }
 .bullets li strong{ font-weight:600; }
 .bullets.tight li{ padding:13px 0 13px 30px; }
@@ -377,9 +377,8 @@ image-slot::part(empty){ color:var(--ink-soft); }
   .site-head .bar{ height:60px; }
   .brand{ font-size:18px; }
   .hero{ padding-top:clamp(40px,8vh,72px); }
-<<<<<<< repo (HEAD)
   .case-title{ font-size:clamp(28px, 12vw, 42px); }
-  .chapter h2{ font-size:clamp(26px, 8vw, 38px); max-width:100%; }
+  .chapter h2{ font-size:clamp(26px, 8vw, 38px); line-height:1.25; max-width:100%; }
   .prose p{ font-size:15px; }
   .bullets li{ padding-left:28px; }
   .mw-row{ flex-direction:column; align-items:flex-start; gap:12px; }
