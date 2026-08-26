@@ -11,12 +11,24 @@
 <div class="reading-progress"></div>
 
 <header class="site-head">
-  <div class="bar">
-    <nav class="nav">
-      <a href="index.html#top">Home</a>
-      <a href="index.html#work">Work</a>
-      <a href="index.html#contact">Contact</a>
+  <span class="head-bg" aria-hidden="true"></span>
+  <div class="head-in">
+    <a class="logo" href="index.html" aria-label="Zhenya Baranchik — home">zb</a>
+    <nav class="nav" aria-label="Primary">
+      <a class="navlink" href="index.html#work"><span class="flip"><span class="flip-a">Work</span><span class="flip-b" aria-hidden="true">Work</span></span></a>
+      <a class="navlink" href="about.html"><span class="flip"><span class="flip-a">About</span><span class="flip-b" aria-hidden="true">About</span></span></a>
+      <a class="navlink" href="index.html#contact"><span class="flip"><span class="flip-a">Contact</span><span class="flip-b" aria-hidden="true">Contact</span></span></a>
+      <a class="navlink" href="assets/Zhenya_Baranchik_CV_2026.pdf" target="_blank" rel="noopener" download><span class="flip"><span class="flip-a">CV</span><span class="flip-b" aria-hidden="true">CV</span></span></a>
     </nav>
+    <details class="navmenu">
+      <summary>Menu</summary>
+      <div class="navmenu-panel">
+        <a class="navlink" href="index.html#work">Work</a>
+        <a class="navlink" href="about.html">About</a>
+        <a class="navlink" href="index.html#contact">Contact</a>
+        <a class="navlink" href="assets/Zhenya_Baranchik_CV_2026.pdf" target="_blank" rel="noopener" download>CV</a>
+      </div>
+    </details>
   </div>
 </header>
 
@@ -24,14 +36,13 @@
 <!-- HERO -->
 <section class="case-hero">
   <div class="wrap">
-    <a href="index.html#work" class="case-back">←</a>
     <div class="case-kicker reveal">
       <span class="tag">B2B SaaS</span>
       <span class="tag">Workiz</span>
       <span class="tag">2022–2023</span>
     </div>
     <h1 class="case-title reveal reveal-d1">Equipment Tracking</h1>
-    <p class="case-sub reveal reveal-d2" style="color: rgb(111, 102, 91); font-weight: 400">A way for field-service businesses to monitor and manage <span class="serif-i accent" style="color: rgb(111, 102, 91); font-weight: 500">all equipment</span> installed for their clients.</p>
+    <p class="case-sub reveal reveal-d2">A way for field-service businesses to monitor and manage all equipment installed for their clients.</p>
     <figure class="figure reveal reveal-d3">
       <div class="cs-img case-hero-media clip in">
         <image-slot style="aspect-ratio:1448/1086;" id="equip-hero" shape="rounded" radius="20" src="images/equip-hero.webp" placeholder="Hero image showing equipment list UI on desktop and mobile" alt="Hero image showing equipment list UI on desktop and mobile" fit="contain"></image-slot>
@@ -107,11 +118,11 @@
       <span class="chapter-no">Goals</span>
       <h2>Visibility, speed, and a complete history.</h2>
     </div>
-    <ul class="bullets reveal reveal-d1">
-      <li><strong>Full visibility</strong> — track all installed equipment across jobs and clients, capturing serials, warranties, install dates, and service history so nothing gets lost.</li>
-      <li><strong>Faster updates</strong> — let techs log equipment directly on jobs, syncing details to the client profile automatically.</li>
-      <li><strong>Complete service history</strong> — record every install, maintenance, and removal so businesses can plan proactive service and give better recommendations.</li>
-    </ul>
+    <div class="cols-3 reveal reveal-d1">
+      <div class="card"><div class="k">Full visibility</div><p>Track all installed equipment across jobs and clients, capturing serials, warranties, install dates, and service history so nothing gets lost.</p></div>
+      <div class="card"><div class="k">Faster updates</div><p>Let techs log equipment directly on jobs, syncing details to the client profile automatically.</p></div>
+      <div class="card"><div class="k">Complete service history</div><p>Record every install, maintenance, and removal so businesses can plan proactive service and give better recommendations.</p></div>
+    </div>
   </div>
 </section>
 
@@ -333,13 +344,15 @@
 </main>
 
 <footer class="site-foot" id="contact">
-  <div class="wrap">
-    <p class="foot-cta reveal">Let&rsquo;s <span class="serif-i talk-gradient" style="font-weight: 700">talk</span>.<br/><a href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=zbaranchik@gmail.com" target="_blank" rel="noopener" data-magnetic="0.18">zbaranchik@gmail.com</a></p>
-    <div class="foot-grid">
-      <div class="foot-col"><span>Zhenya Baranchik (Tel Aviv)</span></div>
-      <div class="foot-col"><a href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=zbaranchik@gmail.com" target="_blank" rel="noopener">zbaranchik@gmail.com</a></div>
-      <div class="foot-col"><a href="tel:+972527330292">052 733 0292</a></div>
-      <div class="foot-col"><a href="https://www.linkedin.com/in/zhenya-baranchik-ba61b7147/" target="_blank" rel="noopener">View profile ↗</a></div>
+  <div class="foot-in">
+    <div class="foot-cta">
+      <span class="foot-hi">Let&rsquo;s talk</span>
+      <a class="foot-mail" href="mailto:zbaranchik@gmail.com"><span class="flip"><span class="flip-a">zbaranchik@gmail.com</span><span class="flip-b" aria-hidden="true">zbaranchik@gmail.com</span></span></a>
+    </div>
+    <div class="foot-meta">
+      <span>Zhenya Baranchik (Tel Aviv)</span>
+      <span>052 733 0292</span>
+      <a href="https://www.linkedin.com/in/zhenyabaranchik/" target="_blank" rel="noopener"><span class="flip"><span class="flip-a">LinkedIn ↗</span><span class="flip-b" aria-hidden="true">LinkedIn ↗</span></span></a>
     </div>
   </div>
 </footer>
