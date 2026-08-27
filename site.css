@@ -203,6 +203,11 @@ body.has-cursor a, body.has-cursor button, body.has-cursor .work-row{ cursor:non
    radius image-slot applies, so the two can sit side by side in a figure */
 img.media, img.media.wide, img.media.tall, img.media.mid{ height:auto; border-radius:16px; }
 img.case-hero-media{ height:auto; border-radius:20px; }
+/* stacked media in one figure: an explicit 24px gap. image-slot is an
+   inline-block host, so without this the spacing is whatever the line box
+   leaves behind rather than a chosen value. */
+.figure > .media{ display:block; }
+.figure > .media + .media{ margin-top:24px; }
 .figcap{ font-family:var(--mono); font-size:11px; letter-spacing:.06em; color:var(--ink-faint); margin-top:12px; text-transform:uppercase; }
 
 /* comparison table */
